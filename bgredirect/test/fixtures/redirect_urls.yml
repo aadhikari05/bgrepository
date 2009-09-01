@@ -1,0 +1,17 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+   redirect_url: MyText
+  keyword1: MyString
+  keyword2: MyString
+  keyword3: MyString
+  keyword4: MyString
+  keyword5: MyString
+
+two:
+   redirect_url: MyText
+  keyword1: MyString
+  keyword2: MyString
+  keyword3: MyString
+  keyword4: MyString
+  keyword5: MyString

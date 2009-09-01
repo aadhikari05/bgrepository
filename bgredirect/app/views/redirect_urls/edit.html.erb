@@ -1,0 +1,36 @@
+<h1>Editing redirect_url</h1>
+
+<% form_for(@redirect_url) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label : redirect_url %><br />
+    <%= f.text_area : redirect_url %>
+  </p>
+  <p>
+    <%= f.label :keyword1 %><br />
+    <%= f.text_field :keyword1 %>
+  </p>
+  <p>
+    <%= f.label :keyword2 %><br />
+    <%= f.text_field :keyword2 %>
+  </p>
+  <p>
+    <%= f.label :keyword3 %><br />
+    <%= f.text_field :keyword3 %>
+  </p>
+  <p>
+    <%= f.label :keyword4 %><br />
+    <%= f.text_field :keyword4 %>
+  </p>
+  <p>
+    <%= f.label :keyword5 %><br />
+    <%= f.text_field :keyword5 %>
+  </p>
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @redirect_url %> |
+<%= link_to 'Back', redirect_urls_path %>

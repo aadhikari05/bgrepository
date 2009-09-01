@@ -1,0 +1,30 @@
+<h1>Listing redirect_urls</h1>
+
+<table>
+  <tr>
+    <th> redirect url</th>
+    <th>Keyword1</th>
+    <th>Keyword2</th>
+    <th>Keyword3</th>
+    <th>Keyword4</th>
+    <th>Keyword5</th>
+  </tr>
+
+<% for redirect_url in @redirect_urls %>
+  <tr>
+    <td><%=h redirect_url. redirect_url %></td>
+    <td><%=h redirect_url.keyword1 %></td>
+    <td><%=h redirect_url.keyword2 %></td>
+    <td><%=h redirect_url.keyword3 %></td>
+    <td><%=h redirect_url.keyword4 %></td>
+    <td><%=h redirect_url.keyword5 %></td>
+    <td><%= link_to 'Show', redirect_url %></td>
+    <td><%= link_to 'Edit', edit_redirect_url_path(redirect_url) %></td>
+    <td><%= link_to 'Destroy', redirect_url, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New redirect_url', new_redirect_url_path %>

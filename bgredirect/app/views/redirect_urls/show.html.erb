@@ -1,0 +1,33 @@
+<p>
+  <b> redirect url:</b>
+  <%=h @redirect_url. redirect_url %>
+</p>
+
+<p>
+  <b>Keyword1:</b>
+  <%=h @redirect_url.keyword1 %>
+</p>
+
+<p>
+  <b>Keyword2:</b>
+  <%=h @redirect_url.keyword2 %>
+</p>
+
+<p>
+  <b>Keyword3:</b>
+  <%=h @redirect_url.keyword3 %>
+</p>
+
+<p>
+  <b>Keyword4:</b>
+  <%=h @redirect_url.keyword4 %>
+</p>
+
+<p>
+  <b>Keyword5:</b>
+  <%=h @redirect_url.keyword5 %>
+</p>
+
+
+<%= link_to 'Edit', edit_redirect_url_path(@redirect_url) %> |
+<%= link_to 'Back', redirect_urls_path %>
