@@ -29,7 +29,7 @@ class FBORecoveryFileParser
   private 
   
   def parseRow(row)
-      
+      #puts "Parse Row Start"
       if !row.nil? && row[5].match(generatedRegEx)
         
         sol_type  = row[5]
@@ -81,8 +81,8 @@ class FBORecoveryFileParser
         opportunity.active_ind = row[20]
         #opportunity.type = row[21]
         opportunity.recovery_ind = "true"
-        
-        opportunity =  set_pop_state opportunity
+        #puts "Here"
+        opportunity =  set_pop_state(opportunity)
         
        self.opportunities << opportunity
        
@@ -107,7 +107,7 @@ class FBORecoveryFileParser
           opportunity.pop_state = AddressParser.new(opportunity.pop_zip.to_s).parse.state 
           puts opportunity.pop_state+"---"+opportunity.pop_zip
         end
-        if (opportunity.pop_state=='' && !opportunity.pop_address.nil?)
+        if ( (opportunity.pop_state.nil? || opportunity.pop_state=='') && !opportunity.pop_address.nil?)
           opportunity.pop_state = AddressParser.new(opportunity.pop_address).parse.state 
           puts opportunity.pop_state+"---"+opportunity.pop_address
         end

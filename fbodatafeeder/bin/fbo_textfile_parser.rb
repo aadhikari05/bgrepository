@@ -55,7 +55,7 @@ class FBOTextfileParser
           opportunity.pop_state = AddressParser.new(opportunity.pop_zip.to_s).parse.state 
           puts opportunity.pop_state+"---"+opportunity.pop_zip
         end
-        if (opportunity.pop_state=='' && !opportunity.pop_address.nil?)
+         if ( (opportunity.pop_state.nil? || opportunity.pop_state=='') && !opportunity.pop_address.nil?)
           opportunity.pop_state = AddressParser.new(opportunity.pop_address).parse.state 
           puts opportunity.pop_state+"---"+opportunity.pop_address
         end

@@ -18466,3 +18466,115 @@ Rendering opportunities/search
   [4;36;1mSolicitationType Columns (0.001713)[0m   [0;1mSHOW FIELDS FROM `solicitation_types`[0m
   [4;35;1mSetaside Columns (0.001673)[0m   [0mSHOW FIELDS FROM `setasides`[0m
 Completed in 0.05524 (18 reqs/sec) | Rendering: 0.03033 (54%) | DB: 0.01794 (32%) | 200 OK [http://127.0.0.1/solicitation/search]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-11-23 12:48:12) [GET]
+  Session ID: 510889d973a0caeffd02447173262208
+  Parameters: {}
+
+
+ActionController::RoutingError (No route matches "/presolicitation/search" with {:method=>:get}):
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/routing/recognition_optimisation.rb:67:in `recognize_path'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/routing/route_set.rb:384:in `recognize'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb:148:in `handle_request'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb:107:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb:104:in `synchronize'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb:104:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb:120:in `dispatch_cgi'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb:35:in `dispatch'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/rails.rb:76:in `process'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/rails.rb:74:in `synchronize'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/rails.rb:74:in `process'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:159:in `process_client'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `process_client'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `initialize'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `new'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `initialize'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `new'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:282:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:281:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:281:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/mongrel_rails:128:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/command.rb:212:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/mongrel_rails:281
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb:502:in `load'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb:502:in `load'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb:354:in `new_constants_in'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb:502:in `load'
+    /Library/Ruby/Gems/1.8/gems/rails-2.1.0/lib/commands/servers/mongrel.rb:64
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb:509:in `require'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb:354:in `new_constants_in'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb:509:in `require'
+    /Library/Ruby/Gems/1.8/gems/rails-2.1.0/lib/commands/server.rb:39
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+    ./script/server:3
+    -e:2:in `load'
+    -e:2
+
+Rendering /Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/templates/rescues/layout.erb (not_found)
+  [4;36;1mSQL (0.032071)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.000188)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSetaside Load (0.050419)[0m   [0;1mSELECT * FROM `setasides` ORDER BY s_type[0m
+  [4;35;1mSolicitationType Load (0.012822)[0m   [0mSELECT * FROM `solicitation_types` ORDER BY s_type[0m
+  [4;36;1mState Load (0.042739)[0m   [0;1mSELECT * FROM `states` ORDER BY name[0m
+
+
+Processing OpportunitiesController#search (for 127.0.0.1 at 2009-11-23 12:48:24) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--03fcda999d8e1a65230e90bb2761ec16f588f32d
+  Parameters: {"action"=>"search", "controller"=>"opportunities"}
+  [4;35;1mOpportunity Load (0.104607)[0m   [0mSELECT * FROM `opportunities` WHERE ( (opportunities.active_ind = true OR (opportunities.active_ind is null AND opportunities.resp_date >= '2009-11-23T12:48:24-05:00') OR (opportunities.active_ind is null AND opportunities.resp_date is null AND opportunities.sol_date >= '2009-11-08 17:48:24 UTC') ) AND opportunities.setaside != '' AND opportunities.setaside !='N/A' ) LIMIT 0, 20[0m
+  [4;36;1mOpportunity Columns (0.003442)[0m   [0;1mSHOW FIELDS FROM `opportunities`[0m
+  [4;35;1mSQL (0.052467)[0m   [0mSELECT count(*) AS count_all FROM `opportunities` WHERE ( (opportunities.active_ind = true OR (opportunities.active_ind is null AND opportunities.resp_date >= '2009-11-23T12:48:24-05:00') OR (opportunities.active_ind is null AND opportunities.resp_date is null AND opportunities.sol_date >= '2009-11-08 17:48:24 UTC') ) AND opportunities.setaside != '' AND opportunities.setaside !='N/A' ) [0m
+Rendering template within layouts/opportunities
+Rendering opportunities/search
+  [4;36;1mState Columns (0.001867)[0m   [0;1mSHOW FIELDS FROM `states`[0m
+  [4;35;1mSolicitationType Columns (0.001751)[0m   [0mSHOW FIELDS FROM `solicitation_types`[0m
+  [4;36;1mSetaside Columns (0.001750)[0m   [0;1mSHOW FIELDS FROM `setasides`[0m
+Completed in 0.26270 (3 reqs/sec) | Rendering: 0.04609 (17%) | DB: 0.30412 (115%) | 200 OK [http://127.0.0.1/solicitation/search]
+  [4;35;1mSetaside Load (0.000717)[0m   [0mSELECT * FROM `setasides` ORDER BY s_type[0m
+  [4;36;1mSolicitationType Load (0.000381)[0m   [0;1mSELECT * FROM `solicitation_types` ORDER BY s_type[0m
+  [4;35;1mState Load (0.000797)[0m   [0mSELECT * FROM `states` ORDER BY name[0m
+
+
+Processing OpportunitiesController#search (for 127.0.0.1 at 2009-11-23 13:31:55) [POST]
+  Session ID: BAh7BzoMY3NyZl9pZCIlNGJiMmUxZDVlNzE0MTk0OTZkZjRmODk3N2RjNWU1
+NjkiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--d01c7f5ae6b7153fe040447fc14086dbdbcd5272
+  Parameters: {"commit"=>"Search", "sol_type"=>"", "setaside"=>"", "authenticity_token"=>"44bc0cae39bed4c22ca64e4a82f8e0e0d1c8c9a6", "action"=>"search", "controller"=>"opportunities", "pop_state"=>"", "keywords"=>""}
+  [4;36;1mOpportunity Load (0.002473)[0m   [0;1mSELECT * FROM `opportunities` WHERE ( (opportunities.active_ind = true OR (opportunities.active_ind is null AND opportunities.resp_date >= '2009-11-23T13:31:55-05:00') OR (opportunities.active_ind is null AND opportunities.resp_date is null AND opportunities.sol_date >= '2009-11-08 18:31:55 UTC') ) AND opportunities.setaside != '' AND opportunities.setaside !='N/A' ) LIMIT 0, 20[0m
+  [4;35;1mOpportunity Columns (0.003661)[0m   [0mSHOW FIELDS FROM `opportunities`[0m
+  [4;36;1mSQL (0.091249)[0m   [0;1mSELECT count(*) AS count_all FROM `opportunities` WHERE ( (opportunities.active_ind = true OR (opportunities.active_ind is null AND opportunities.resp_date >= '2009-11-23T13:31:55-05:00') OR (opportunities.active_ind is null AND opportunities.resp_date is null AND opportunities.sol_date >= '2009-11-08 18:31:55 UTC') ) AND opportunities.setaside != '' AND opportunities.setaside !='N/A' ) [0m
+Rendering template within layouts/opportunities
+Rendering opportunities/search
+  [4;35;1mState Columns (0.001902)[0m   [0mSHOW FIELDS FROM `states`[0m
+  [4;36;1mSolicitationType Columns (0.001611)[0m   [0;1mSHOW FIELDS FROM `solicitation_types`[0m
+  [4;35;1mSetaside Columns (0.001665)[0m   [0mSHOW FIELDS FROM `setasides`[0m
+Completed in 0.14119 (7 reqs/sec) | Rendering: 0.03043 (21%) | DB: 0.10446 (73%) | 200 OK [http://127.0.0.1/solicitation/search]
+  [4;36;1mSetaside Load (0.000569)[0m   [0;1mSELECT * FROM `setasides` ORDER BY s_type[0m
+  [4;35;1mSolicitationType Load (0.000297)[0m   [0mSELECT * FROM `solicitation_types` ORDER BY s_type[0m
+  [4;36;1mState Load (0.000611)[0m   [0;1mSELECT * FROM `states` ORDER BY name[0m
+
+
+Processing OpportunitiesController#search (for 127.0.0.1 at 2009-11-23 13:32:00) [POST]
+  Session ID: BAh7CyINc29sX3R5cGUiACINc2V0YXNpZGUiADoMY3NyZl9pZCIlNGJiMmUx
+ZDVlNzE0MTk0OTZkZjRmODk3N2RjNWU1NjkiDnBvcF9zdGF0ZSIAIgpmbGFz
+aElDOidBY3Rpb25Db250cm9sbGVyOjpGbGFzaDo6Rmxhc2hIYXNoewAGOgpA
+dXNlZHsAIg1rZXl3b3JkcyIA--3274bb2cfb7d4c06561112f4d8a5510d27027d5a
+  Parameters: {"commit"=>"Search", "only_recovery"=>"only_recovery", "sol_type"=>"", "setaside"=>"", "authenticity_token"=>"44bc0cae39bed4c22ca64e4a82f8e0e0d1c8c9a6", "action"=>"search", "controller"=>"opportunities", "pop_state"=>"", "keywords"=>""}
+  [4;35;1mOpportunity Load (0.020595)[0m   [0mSELECT * FROM `opportunities` WHERE ( (opportunities.active_ind = true OR (opportunities.active_ind is null AND opportunities.resp_date >= '2009-11-23T13:32:00-05:00') OR (opportunities.active_ind is null AND opportunities.resp_date is null AND opportunities.sol_date >= '2009-11-08 18:32:00 UTC') ) AND opportunities.setaside != '' AND opportunities.setaside !='N/A' AND opportunities.recovery_ind = true ) LIMIT 0, 20[0m
+  [4;36;1mOpportunity Columns (0.003281)[0m   [0;1mSHOW FIELDS FROM `opportunities`[0m
+  [4;35;1mSQL (0.069272)[0m   [0mSELECT count(*) AS count_all FROM `opportunities` WHERE ( (opportunities.active_ind = true OR (opportunities.active_ind is null AND opportunities.resp_date >= '2009-11-23T13:32:00-05:00') OR (opportunities.active_ind is null AND opportunities.resp_date is null AND opportunities.sol_date >= '2009-11-08 18:32:00 UTC') ) AND opportunities.setaside != '' AND opportunities.setaside !='N/A' AND opportunities.recovery_ind = true ) [0m
+Rendering template within layouts/opportunities
+Rendering opportunities/search
+  [4;36;1mState Columns (0.001810)[0m   [0;1mSHOW FIELDS FROM `states`[0m
+  [4;35;1mSolicitationType Columns (0.001594)[0m   [0mSHOW FIELDS FROM `solicitation_types`[0m
+  [4;36;1mSetaside Columns (0.001581)[0m   [0;1mSHOW FIELDS FROM `setasides`[0m
+Completed in 0.23721 (4 reqs/sec) | Rendering: 0.13075 (55%) | DB: 0.09961 (41%) | 200 OK [http://127.0.0.1/solicitation/search]
