@@ -1,0 +1,22 @@
+<h1>Listing setasides</h1>
+
+<table>
+  <tr>
+    <th>S type</th>
+    <th>S value</th>
+  </tr>
+
+<% for setaside in @setasides %>
+  <tr>
+    <td><%=h setaside.s_type %></td>
+    <td><%=h setaside.s_value %></td>
+    <td><%= link_to 'Show', setaside %></td>
+    <td><%= link_to 'Edit', edit_setaside_path(setaside) %></td>
+    <td><%= link_to 'Destroy', setaside, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New setaside', new_setaside_path %>

@@ -1,0 +1,57 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  type: MyString
+  date: 2009-11-12
+  agency: MyString
+  agency_office: MyString
+  agency_location: MyString
+  agency_zip: MyString
+  agency_office_address: MyString
+  classcode: MyString
+  naics: MyString
+  subject: MyString
+  sol_nbr: MyString
+  resp_date: 2009-11-12 15:27:38
+  archive_date: 2009-11-12
+  archive_policy: MyString
+  sol_desc: MyString
+  link_url: MyString
+  link_desc: MyString
+  contact: MyString
+  contact_email: MyString
+  contact_email_desc: MyString
+  setaside: MyString
+  pop_address: MyString
+  pop_zip: MyString
+  pop_country: 
+  active_ind: 
+  recovery_ind: false
+
+two:
+  type: MyString
+  date: 2009-11-12
+  agency: MyString
+  agency_office: MyString
+  agency_location: MyString
+  agency_zip: MyString
+  agency_office_address: MyString
+  classcode: MyString
+  naics: MyString
+  subject: MyString
+  sol_nbr: MyString
+  resp_date: 2009-11-12 15:27:38
+  archive_date: 2009-11-12
+  archive_policy: MyString
+  sol_desc: MyString
+  link_url: MyString
+  link_desc: MyString
+  contact: MyString
+  contact_email: MyString
+  contact_email_desc: MyString
+  setaside: MyString
+  pop_address: MyString
+  pop_zip: MyString
+  pop_country: 
+  active_ind: 
+  recovery_ind: false

@@ -1,0 +1,24 @@
+[Tue Nov 17 09:54:48.677 2009] [ 5278] accepting connections
+[Tue Nov 17 10:55:59.012 2009] [ 5278] caught SIGTERM, shutting down
+[Tue Nov 17 10:55:59.018 2009] [ 5278] shutdown complete
+[Tue Nov 17 11:09:09.655 2009] [ 5536] accepting connections
+[Tue Nov 17 11:10:08.250 2009] [ 5536] caught SIGTERM, shutting down
+[Tue Nov 17 11:10:08.252 2009] [ 5536] shutdown complete
+[Tue Nov 17 11:10:17.908 2009] [ 5545] accepting connections
+[Tue Nov 17 11:10:33.572 2009] [ 5545] caught SIGTERM, shutting down
+[Tue Nov 17 11:10:33.574 2009] [ 5545] shutdown complete
+[Tue Nov 17 11:10:54.131 2009] [ 5552] accepting connections
+[Tue Nov 17 11:18:08.687 2009] [ 5552] caught SIGTERM, shutting down
+[Tue Nov 17 11:18:08.689 2009] [ 5552] shutdown complete
+[Tue Nov 17 11:19:22.616 2009] [ 5582] accepting connections
+[Tue Nov 17 11:23:25.027 2009] [ 5582] caught SIGTERM, shutting down
+[Tue Nov 17 11:23:25.028 2009] [ 5582] shutdown complete
+[Tue Nov 17 11:23:42.357 2009] [ 5647] accepting connections
+[Tue Nov 17 11:25:55.755 2009] [ 5647] caught SIGTERM, shutting down
+[Tue Nov 17 11:25:55.756 2009] [ 5647] shutdown complete
+[Tue Nov 17 11:25:56.011 2009] [ 5654] accepting connections
+[Tue Nov 17 17:49:17.196 2009] [ 5654] rotating indices (seamless=1)
+[Tue Nov 17 17:49:17.214 2009] [ 5654] rotating index 'opportunity_core': success
+[Tue Nov 17 17:49:17.214 2009] [ 5654] rotating finished
+[Fri Nov 20 17:30:09.114 2009] [ 5654] caught SIGTERM, shutting down
+[Fri Nov 20 17:30:09.221 2009] [ 5654] shutdown complete

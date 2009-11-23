@@ -1,0 +1,15 @@
+
+database:
+  host: localhost
+  schema: bgsearch_development
+  username: bgdata
+  password: bgdata
+  
+fbo_ftp_site:
+  base: ftp.fbo.gov
+  recovery_folder: FBORecovery
+  
+tags_to_parse:
+  text_file_tags: PRESOL,COMBINE
+  cvs_file_tags: Presolicitation,Combined Synopsis
+ 

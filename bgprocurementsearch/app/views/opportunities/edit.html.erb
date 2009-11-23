@@ -1,0 +1,116 @@
+<h1>Editing opportunity</h1>
+
+<% form_for(@opportunity) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :sol_type %><br />
+    <%= f.text_field :sol_type %>
+  </p>
+  <p>
+    <%= f.label :sol_date %><br />
+    <%= f.date_select :sol_date %>
+  </p>
+  <p>
+    <%= f.label :agency %><br />
+    <%= f.text_field :agency %>
+  </p>
+  <p>
+    <%= f.label :agency_office %><br />
+    <%= f.text_field :agency_office %>
+  </p>
+  <p>
+    <%= f.label :agency_location %><br />
+    <%= f.text_field :agency_location %>
+  </p>
+  <p>
+    <%= f.label :agency_zip %><br />
+    <%= f.text_field :agency_zip %>
+  </p>
+  <p>
+    <%= f.label :agency_office_address %><br />
+    <%= f.text_field :agency_office_address %>
+  </p>
+  <p>
+    <%= f.label :classcode %><br />
+    <%= f.text_field :classcode %>
+  </p>
+  <p>
+    <%= f.label :naics %><br />
+    <%= f.text_field :naics %>
+  </p>
+  <p>
+    <%= f.label :subject %><br />
+    <%= f.text_field :subject %>
+  </p>
+  <p>
+    <%= f.label :sol_nbr %><br />
+    <%= f.text_field :sol_nbr %>
+  </p>
+  <p>
+    <%= f.label :resp_date %><br />
+    <%= f.datetime_select :resp_date %>
+  </p>
+  <p>
+    <%= f.label :archive_date %><br />
+    <%= f.date_select :archive_date %>
+  </p>
+  <p>
+    <%= f.label :archive_policy %><br />
+    <%= f.text_field :archive_policy %>
+  </p>
+  <p>
+    <%= f.label :sol_desc %><br />
+    <%= f.text_field :sol_desc %>
+  </p>
+  <p>
+    <%= f.label :link_url %><br />
+    <%= f.text_field :link_url %>
+  </p>
+  <p>
+    <%= f.label :link_desc %><br />
+    <%= f.text_field :link_desc %>
+  </p>
+  <p>
+    <%= f.label :contact %><br />
+    <%= f.text_field :contact %>
+  </p>
+  <p>
+    <%= f.label :contact_email %><br />
+    <%= f.text_field :contact_email %>
+  </p>
+  <p>
+    <%= f.label :contact_email_desc %><br />
+    <%= f.text_field :contact_email_desc %>
+  </p>
+  <p>
+    <%= f.label :setaside %><br />
+    <%= f.text_field :setaside %>
+  </p>
+  <p>
+    <%= f.label :pop_address %><br />
+    <%= f.text_field :pop_address %>
+  </p>
+  <p>
+    <%= f.label :pop_zip %><br />
+    <%= f.text_field :pop_zip %>
+  </p>
+  <p>
+    <%= f.label :pop_country %><br />
+    <%= f.text_field :pop_country %>
+  </p>
+  <p>
+    <%= f.label :active_ind %><br />
+    <%= f.text_field :active_ind %>
+  </p>
+  <p>
+    <%= f.label :recovery_ind %><br />
+    <%= f.check_box :recovery_ind %>
+  </p>
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @opportunity %> |
+<%= link_to 'Back', opportunities_path %>

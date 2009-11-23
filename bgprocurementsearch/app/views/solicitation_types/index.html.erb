@@ -1,0 +1,22 @@
+<h1>Listing solicitation_types</h1>
+
+<table>
+  <tr>
+    <th>S type</th>
+    <th>S value</th>
+  </tr>
+
+<% for solicitation_type in @solicitation_types %>
+  <tr>
+    <td><%=h solicitation_type.s_type %></td>
+    <td><%=h solicitation_type.s_value %></td>
+    <td><%= link_to 'Show', solicitation_type %></td>
+    <td><%= link_to 'Edit', edit_solicitation_type_path(solicitation_type) %></td>
+    <td><%= link_to 'Destroy', solicitation_type, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New solicitation_type', new_solicitation_type_path %>

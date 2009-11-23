@@ -1,0 +1,22 @@
+<h1>Listing parsed_files</h1>
+
+<table>
+  <tr>
+    <th>File name</th>
+    <th>Details</th>
+  </tr>
+
+<% for parsed_file in @parsed_files %>
+  <tr>
+    <td><%=h parsed_file.file_name %></td>
+    <td><%=h parsed_file.details %></td>
+    <td><%= link_to 'Show', parsed_file %></td>
+    <td><%= link_to 'Edit', edit_parsed_file_path(parsed_file) %></td>
+    <td><%= link_to 'Destroy', parsed_file, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New parsed_file', new_parsed_file_path %>

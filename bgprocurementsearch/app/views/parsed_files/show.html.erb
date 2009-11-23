@@ -1,0 +1,13 @@
+<p>
+  <b>File name:</b>
+  <%=h @parsed_file.file_name %>
+</p>
+
+<p>
+  <b>Details:</b>
+  <%=h @parsed_file.details %>
+</p>
+
+
+<%= link_to 'Edit', edit_parsed_file_path(@parsed_file) %> |
+<%= link_to 'Back', parsed_files_path %>
