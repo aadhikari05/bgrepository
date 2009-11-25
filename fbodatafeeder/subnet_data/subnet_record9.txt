@@ -1,0 +1,11 @@
+Prime's Name:  	City of Jacksonville
+Contact: 	Deanna Young
+Address 1: 	815 New Bridge Street,JACKSONVILLE, NC,28540 ,Phone: 	910-938-6550,Fax: 	910-938-0982
+Email: 	dyoung@ci.jacksonville.nc.us
+Seeking: US Department Of Transportation Disadvantaged Business Enterprise (DBE), Small Disadvantaged Business (SDB),Women Owned Small Business (WOSB),Hubzone Small Business (HUBZSB),Veteran Owned Small Business (VOSB), Historically Black Colleges and Universities and Minority Institutions (HBCU & MI),Other Small Business,Service-Disabled Veteran-Owned Small Business(SD-VOSB)
+Description: 	ARRA - Installation and related equipment for RTU units; communication master polling station control panel; individual spread-spectrum wireless Ethernet links and related equipment; install and startup services; and decommission of existing RTUs.
+NAICS Code: 	221122,238210,334210,334511,334515,335313,423610
+Place of performance: 	NC
+Prime Sol. Number: 	
+Subcontract Sol. Number: 	FY 10-06
+Bid Closing Date: 	12/8/2009 3:00 PM EDT

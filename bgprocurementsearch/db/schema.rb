@@ -193,24 +193,25 @@ ActiveRecord::Schema.define(:version => 20091120160035) do
   add_index "oldzips2", ["fips_state", "fipscity"], :name => "oldzip2_codes"
 
   create_table "opportunities", :force => true do |t|
-    t.string   "sol_type",              :limit => 100,  :null => false
-    t.date     "sol_date",                              :null => false
-    t.string   "agency",                :limit => 500,  :null => false
+    t.string   "sol_type",              :limit => 100,      :null => false
+    t.date     "sol_date"
+    t.string   "agency",                :limit => 500,      :null => false
     t.string   "agency_office",         :limit => 500
     t.string   "agency_location",       :limit => 500
     t.string   "agency_zip",            :limit => 10
     t.string   "agency_office_address", :limit => 1000
-    t.string   "classcode",             :limit => 5,    :null => false
-    t.string   "naics",                 :limit => 6
-    t.string   "subject",                               :null => false
-    t.string   "sol_nbr",               :limit => 128,  :null => false
+    t.string   "classcode",             :limit => 5,        :null => false
+    t.string   "naics",                 :limit => 1000
+    t.string   "subject",                                   :null => false
+    t.string   "sol_nbr",               :limit => 128,      :null => false
+    t.string   "prime_sol_nbr",         :limit => 128
     t.datetime "resp_date"
     t.date     "archive_date"
     t.string   "archive_policy"
-    t.string   "sol_desc"
+    t.text     "sol_desc",              :limit => 16777215
     t.string   "link_url"
     t.string   "link_desc"
-    t.string   "contact",                               :null => false
+    t.text     "contact",               :limit => 16777215, :null => false
     t.string   "contact_email",         :limit => 128
     t.string   "contact_email_desc"
     t.string   "setaside",              :limit => 1000
@@ -219,7 +220,7 @@ ActiveRecord::Schema.define(:version => 20091120160035) do
     t.string   "pop_country",           :limit => 32
     t.boolean  "active_ind"
     t.boolean  "recovery_ind"
-    t.string   "pop_state",             :limit => 10
+    t.string   "pop_state",             :limit => 1000
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -320,10 +321,6 @@ ActiveRecord::Schema.define(:version => 20091120160035) do
   end
 
   add_index "recommended_site_url", ["url"], :name => "index_recommended_site_url_on_url"
-
-  create_table "schema_info", :id => false, :force => true do |t|
-    t.integer "version", :limit => 11
-  end
 
   create_table "setasides", :force => true do |t|
     t.string   "s_type"

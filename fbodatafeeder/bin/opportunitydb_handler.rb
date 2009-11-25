@@ -165,6 +165,10 @@ class OpportunityDBHandler
         @columnNamePartSQL = appendColumnNameToSQL(@columnNamePartSQL,"recovery_ind")
         @columnValuePartSQL = appendBooleanColumnValueToSQL(@columnValuePartSQL,opportunity.recovery_ind)
       end
+      if !opportunity.prime_sol_nbr.nil?
+        @columnNamePartSQL = appendColumnNameToSQL(@columnNamePartSQL,"prime_sol_nbr")
+        @columnValuePartSQL = appendColumnValueToSQL(@columnValuePartSQL,opportunity.prime_sol_nbr)
+      end
     
       @columnNamePartSQL = appendColumnNameToSQL(@columnNamePartSQL,"created_at")
       @columnValuePartSQL = appendDateColumnValueToSQL(@columnValuePartSQL,"current_timestamp",nil)

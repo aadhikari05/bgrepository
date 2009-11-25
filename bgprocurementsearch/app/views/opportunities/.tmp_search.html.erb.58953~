@@ -1,0 +1,103 @@
+
+<% form_tag("/solicitation/search", :method => "post") do %>  
+	<table border=1>
+		<tr>
+			<td><%= label_tag(:pop_state, "Performance State:") %></td>  
+			<td><%= select_tag('pop_state', "<option value="" >Select a state</option>"+options_from_collection_for_select(@states, 'alpha', 'name', @pop_state) ) %></td>
+		</tr>
+		<tr>
+			<td><%= label_tag(:sol_type, "Solicitation Type:") %></td>  
+			<td><%= select_tag('sol_type', "<option value="" >Select a type</option>"+options_from_collection_for_select(@sol_types, 's_value', 's_type', @sol_type) ) %></td> 
+			  
+		</tr>
+		<tr>
+			<td><%= label_tag(:setaside, "Setaside Type:") %></td>  
+			<td><%= select_tag('setaside', "<option value="" >Select a type</option>"+options_from_collection_for_select(@setasides, 's_value', 's_type', @setaside) ) %></td> 
+ 		</tr>
+		<tr>
+			<td><%= label_tag(:recovery_ind, "Only Recovery:") %></td>  
+			<td><%= check_box_tag('only_recovery', 'only_recovery', @only_recovery_flag) %></td>  
+		</tr>
+		<tr>
+			<td><%= label_tag(:keywords, "Keywords:") %></td>  
+			<td><%= text_field_tag(:keywords, @keywords) %></td>  
+		</tr>
+		<tr>
+			<td colspan=2><%= submit_tag("Search") %></td>
+		</tr>
+	 
+	</table>
+	<%= %>
+<% end %> 
+
+<h1>Search Result</h1>
+<%= page_entries_info @opportunities, :entry_name => 'opportunities' %>
+
+<%= will_paginate @opportunities %>
+<table border=1>
+  <tr>
+    <th>Type</th>
+    <th>Date</th>
+    <th>Agency</th>
+    <th>Agency office</th>
+    <th>Agency location</th>
+    <th>Agency zip</th>
+    <th>Agency office address</th>
+    <th>Classcode</th>
+    <th>Naics</th>
+    <th>Subject</th>
+    <th>Sol nbr</th>
+    <th>Resp date</th>
+    <th>Archive date</th>
+    <th>Archive policy</th>
+    <th>Sol desc</th>
+    <th>Link url</th>
+    <th>Link desc</th>
+    <th>Contact</th>
+    <th>Contact email</th>
+    <th>Contact email desc</th>
+    <th>Setaside</th>
+    <th>Pop address</th>
+    <th>Pop zip</th>
+    <th>Pop country</th>
+    <th>Active ind</th>
+    <th>Recovery ind</th>
+  </tr>
+
+<% for opportunity in @opportunities %>
+  <tr>
+    <td><%=h opportunity.sol_type %></td>
+    <td><%=h opportunity.sol_date %></td>
+    <td><%=h opportunity.agency %></td>
+    <td><%=h opportunity.agency_office %></td>
+    <td><%=h opportunity.agency_location %></td>
+    <td><%=h opportunity.agency_zip %></td>
+    <td><%=h opportunity.agency_office_address %></td>
+    <td><%=h opportunity.classcode %></td>
+    <td><%=h opportunity.naics %></td>
+    <td><%=h opportunity.subject %></td>
+    <td><%=h opportunity.sol_nbr %></td>
+    <td><%=h opportunity.resp_date %></td>
+    <td><%=h opportunity.archive_date %></td>
+    <td><%=h opportunity.archive_policy %></td>
+    <td><%=h opportunity.sol_desc %></td>
+    <td><%=h opportunity.link_url %></td>
+    <td><%=h opportunity.link_desc %></td>
+    <td><%=h opportunity.contact %></td>
+    <td><%=h opportunity.contact_email %></td>
+    <td><%=h opportunity.contact_email_desc %></td>
+    <td><%=h opportunity.setaside %></td>
+    <td><%=h opportunity.pop_address %></td>
+    <td><%=h opportunity.pop_zip %></td>
+    <td><%=h opportunity.pop_country %></td>
+    <td><%=h opportunity.active_ind %></td>
+    <td><%=h opportunity.recovery_ind %></td>
+    <td><%= link_to 'Show', opportunity %></td>
+    
+  </tr>
+<% end %>
+</table>
+
+<br />
+<%= will_paginate @opportunities %>
+

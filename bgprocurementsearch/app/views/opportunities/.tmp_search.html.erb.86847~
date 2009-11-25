@@ -1,0 +1,69 @@
+
+<% form_tag("/solicitation/search", :method => "post") do %>  
+	<table border=1>
+		<tr>
+			<td><%= label_tag(:pop_state, "Performance State:") %></td>  
+			<td><%= select_tag('pop_state', "<option value="" >All POP States</option>"+options_from_collection_for_select(@states, 'alpha', 'name', @pop_state) ) %></td>
+		</tr>
+		<tr>
+			<td><%= label_tag(:sol_type, "Solicitation Type:") %></td>  
+			<td><%= select_tag('sol_type', "<option value="" >All Solicitation Types</option>"+options_from_collection_for_select(@sol_types, 's_value', 's_type', @sol_type) ) %></td> 
+			  
+		</tr>
+		<tr>
+			<td><%= label_tag(:setaside, "Setaside Type:") %></td>  
+			<td><%= select_tag('setaside', "<option value="" >All Setaside Types</option>"+options_from_collection_for_select(@setasides, 's_value', 's_type', @setaside) ) %></td> 
+ 		</tr>
+		<tr>
+			<td><%= label_tag(:recovery_ind, "Only Recovery:") %></td>  
+			<td><%= check_box_tag('only_recovery', 'only_recovery', @only_recovery_flag) %></td>  
+		</tr>
+		<tr>
+			<td><%= label_tag(:keywords, "Keywords:") %></td>  
+			<td><%= text_field_tag(:keywords, @keywords) %></td>  
+		</tr>
+		<tr>
+			<td colspan=2><%= submit_tag("Search") %></td>
+		</tr>
+	 
+	</table>
+	<%= %>
+<% end %> 
+
+<h1>Search Result</h1>
+<%= page_entries_info @opportunities, :entry_name => 'opportunities' %>
+
+<%= will_paginate @opportunities %>
+<table border=1>
+  <tr>
+  	<th>Solicitation Number</th>
+	<th>Agency</th>
+    <th>Solicitation Type</th>
+    <th>Solicitation Date</th>
+	<th>Response Date</th>
+	<th>Description</th>
+    <th>Setaside(s)</th>
+    <th >POP State(s)</th>
+    <th>Recovery Indicator</th>
+  </tr>
+
+<% for opportunity in @opportunities %>
+  <tr>
+  	<td><%=h opportunity.sol_nbr %></td>
+	<td><%=h opportunity.agency %></td>
+    <td><%=h opportunity.sol_type %></td>
+    <td><%=h opportunity.sol_date %></td>
+    <td><%=h opportunity.resp_date %></td>
+	<td><%=h opportunity.sol_desc %></td>
+    <td><%=h opportunity.setaside %></td>
+    <td style="WORD-BREAK:BREAK-ALL"><%=h opportunity.pop_state %></td>
+    <td><%=h opportunity.recovery_ind %></td>
+    <td><%= link_to 'Show', opportunity %></td>
+    
+  </tr>
+<% end %>
+</table>
+
+<br />
+<%= will_paginate @opportunities %>
+

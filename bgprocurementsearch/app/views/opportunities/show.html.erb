@@ -1,133 +1,82 @@
-<p>
-  <b>Type:</b>
-  <%=h @opportunity.sol_type %>
-</p>
-
-<p>
-  <b>Date:</b>
-  <%=h @opportunity.sol_date %>
-</p>
-
-<p>
-  <b>Agency:</b>
-  <%=h @opportunity.agency %>
-</p>
-
-<p>
-  <b>Agency office:</b>
-  <%=h @opportunity.agency_office %>
-</p>
-
-<p>
-  <b>Agency location:</b>
-  <%=h @opportunity.agency_location %>
-</p>
-
-<p>
-  <b>Agency zip:</b>
-  <%=h @opportunity.agency_zip %>
-</p>
-
-<p>
-  <b>Agency office address:</b>
-  <%=h @opportunity.agency_office_address %>
-</p>
-
-<p>
-  <b>Classcode:</b>
-  <%=h @opportunity.classcode %>
-</p>
-
-<p>
-  <b>Naics:</b>
-  <%=h @opportunity.naics %>
-</p>
-
-<p>
-  <b>Subject:</b>
-  <%=h @opportunity.subject %>
-</p>
-
-<p>
-  <b>Sol nbr:</b>
-  <%=h @opportunity.sol_nbr %>
-</p>
-
-<p>
-  <b>Resp date:</b>
-  <%=h @opportunity.resp_date %>
-</p>
-
-<p>
-  <b>Archive date:</b>
-  <%=h @opportunity.archive_date %>
-</p>
-
-<p>
-  <b>Archive policy:</b>
-  <%=h @opportunity.archive_policy %>
-</p>
-
-<p>
-  <b>Sol desc:</b>
-  <%=h @opportunity.sol_desc %>
-</p>
-
-<p>
-  <b>Link url:</b>
-  <%=h @opportunity.link_url %>
-</p>
-
-<p>
-  <b>Link desc:</b>
-  <%=h @opportunity.link_desc %>
-</p>
-
-<p>
-  <b>Contact:</b>
-  <%=h @opportunity.contact %>
-</p>
-
-<p>
-  <b>Contact email:</b>
-  <%=h @opportunity.contact_email %>
-</p>
-
-<p>
-  <b>Contact email desc:</b>
-  <%=h @opportunity.contact_email_desc %>
-</p>
-
-<p>
-  <b>Setaside:</b>
-  <%=h @opportunity.setaside %>
-</p>
-
-<p>
-  <b>Pop address:</b>
-  <%=h @opportunity.pop_address %>
-</p>
-
-<p>
-  <b>Pop zip:</b>
-  <%=h @opportunity.pop_zip %>
-</p>
-
-<p>
-  <b>Pop country:</b>
-  <%=h @opportunity.pop_country %>
-</p>
-
-<p>
-  <b>Active ind:</b>
-  <%=h @opportunity.active_ind %>
-</p>
-
-<p>
-  <b>Recovery ind:</b>
-  <%=h @opportunity.recovery_ind %>
-</p>
+<p><b> Solicitation Details</b> </p>
+<table width="100%" border="1" cellspacing="0" cellpadding="2">
+	 <tr>
+        <td><b>Title:</b></td>
+        <td colspan=3> <%=h @opportunity.subject %></td>
+    </tr>
+	 <tr>
+	 	<% 
+			primeSolNbrBlock = ""
+			if !@opportunity.prime_sol_nbr.nil? && @opportunity.prime_sol_nbr!=""
+				primeSolNbrBlock = "<br>Prime:"+@opportunity.prime_sol_nbr
+			end
+	 	%>
+        <td width="15%"><b>Solicitation Number:</b></td>
+        <td width="35%"><%=h @opportunity.sol_nbr %><%=h primeSolNbrBlock %></td>
+        <td width="15%"><b>Classification Code:</b></td>
+        <td width="35%"> <%=h @opportunity.classcode %></td>
+    </tr>
+    <tr>
+        <td><b>Solicitation Type:</b></td>
+        <td><%=h @opportunity.sol_type %></td>
+        <td><b>Solicitation Date:</b></td>
+        <td> <%=h @opportunity.sol_date %></td>
+    </tr>
+	<tr>
+        <td><b>Response Date:</b></td>
+        <td><%=h @opportunity.resp_date %></td>
+        <td><b>Archive Date:</b></td>
+        <td> <%=h @opportunity.archive_date %></td>
+    </tr>
+    <tr>
+       <td><b>Agency:</b></td>
+        <td> <%=h @opportunity.agency %></td>
+        <td><b>Agency Office:</b></td>
+        <td> <%=h @opportunity.agency_office %></td>
+    </tr>
+    <tr>
+        <td><b>Agency Office Address:</b></td>
+        <td colspan=3> <%=h @opportunity.agency_office_address %></td>
+    </tr>
+    <tr>
+        <td><b>Agency Location:</b></td>
+        <td> <%=h @opportunity.agency_location %></td>
+        <td><b>Agency Zip:</b></td>
+        <td> <%=h @opportunity.agency_zip %></td>
+    </tr>
+	
+	<tr>
+        <td><b>Description:</b></td>
+        <td colspan=3> <%=h @opportunity.sol_desc %></td>
+    </tr>
+	 <tr>
+       <td><b>NAICS Code:</b></td>
+        <td> <%=h @opportunity.naics %></td>
+		 <td><b>Setaside:</b></td>
+        <td> <%=h @opportunity.setaside %></td>
+    </tr>
+	<tr>
+        <td><b>Contact:</b></td>
+        <td> <%=h @opportunity.contact %></td>
+        <td><b>Contact Email:</b></td>
+        <td> <%=h @opportunity.contact_email %></td>
+    </tr>
+	<tr>
+        <td><b>Link:</b></td>
+        <td> <%=h @opportunity.link_url %></td>
+        <td><b>Recovery Indicator:</b></td>
+        <td> <%=h @opportunity.recovery_ind %></td>
+    </tr>
+	<tr>
+        <td><b>Place of Performance:</b></td>
+        <td colspan=3> 
+			<%=h @opportunity.pop_address %><br>
+			<%=h @opportunity.pop_state %>,<%=h @opportunity.pop_zip %><br>
+			<%=h @opportunity.pop_country %>
+		</td>
+    </tr>
+</table>
 
 
-<!-- %= link_to 'Edit', edit_opportunity_path(@opportunity) %>  -->
-<%= link_to 'Back', '/solicitation/search/' %>
+
+<%= link_to 'Back To Search', '/solicitation/search/' %>

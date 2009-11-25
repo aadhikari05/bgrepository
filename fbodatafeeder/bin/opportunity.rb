@@ -1,7 +1,8 @@
 class Opportunity
   attr_accessor :sol_type, :sol_date, :agency, :agency_office, :agency_location, :agency_zip, :agency_office_address, :classcode, :naics, \
                 :subject, :sol_nbr, :resp_date, :archive_date, :archive_policy, :sol_desc, :link_url, :link_desc, :contact, :contact_email, \
-                :contact_email_desc, :setaside, :pop_address, :pop_zip, :pop_country, :pop_state, :active_ind, :recovery_ind, :link_tag, :email_tag
+                :contact_email_desc, :setaside, :pop_address, :pop_zip, :pop_country, :pop_state, :active_ind, :recovery_ind, :link_tag, :email_tag, \
+                :prime_sol_nbr
   
   
   def setFieldValueFromLine(line)

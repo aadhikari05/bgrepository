@@ -22,7 +22,8 @@ class OpportunitiesController < ApplicationController
     @setaside = param_value('setaside')
     @sol_type = param_value('sol_type')
     @pop_state = param_value('pop_state')
-    @only_recovery_flag = "only_recovery"==param_value('only_recovery')
+    @only_recovery = param_value('only_recovery')
+    @only_recovery_flag = @only_recovery=="only_recovery"
     @keywords = param_value('keywords')
     #@opportunities = Opportunity.search @keywords, :max_matches => 10_000, :page => params[:page], :per_page => 20, :conditions => conditions
     @opportunities = Opportunity.paginate  :page => params[:page], :per_page => 20, :conditions => conditions
@@ -37,7 +38,7 @@ class OpportunitiesController < ApplicationController
   # GET /opportunities/1.xml
   def show
     @opportunity = Opportunity.find(params[:id])
-
+    puts @opportunity.sol_desc
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @opportunity }
@@ -114,15 +115,21 @@ class OpportunitiesController < ApplicationController
 private  
 
   def param_value (param_name)
-      if (!param_name.nil? && !params[param_name].nil?)
-        session[param_name] = params[param_name]
-        params[param_name].to_s
-      elsif (request.get? && !param_name.nil? && !session[param_name].nil?)
-        session[param_name].to_s
-      else
-        ""
-     end
-    
+    param_value=""
+    if(!param_name.nil?)
+      if(request.post?)
+        if(!params[param_name].nil?)
+          session[param_name] = params[param_name]
+          param_value = params[param_name].to_s
+        else
+          session[param_name] = ""
+        end
+      elsif(request.get?)
+        if(!session[param_name].nil?)
+          param_value = session[param_name].to_s
+        end
+      end
+   end
   end
   
   def conditions
@@ -138,7 +145,7 @@ private
   end
  
   def setaside_conditions
-    " opportunities.setaside = '#{@setaside}' " unless @setaside.blank?
+    " opportunities.setaside LIKE '%#{@setaside}%' " unless @setaside.blank?
   end
   
   def setaside_default_conditions
@@ -151,7 +158,7 @@ private
   end 
   
   def pop_state_conditions
-    " opportunities.pop_state = '#{@pop_state}' "  unless @pop_state.blank?
+    " opportunities.pop_state LIKE '%#{@pop_state}%' "  unless @pop_state.blank?
   end
   
   def sol_type_conditions
@@ -159,7 +166,7 @@ private
   end
   
   def active_conditions
-    " (opportunities.active_ind = true  OR (opportunities.active_ind is null AND opportunities.resp_date >= '#{DateTime.now}')  OR (opportunities.active_ind is null AND opportunities.resp_date is null AND  opportunities.sol_date >= '#{15.days.ago}') ) "
+    " (opportunities.active_ind = true  OR (opportunities.active_ind is null AND opportunities.resp_date >= '#{DateTime.now}')  OR (opportunities.active_ind is null AND opportunities.resp_date is null AND opportunities.sol_date is not null AND  opportunities.sol_date >= '#{15.days.ago}') ) "
   end
   
   
