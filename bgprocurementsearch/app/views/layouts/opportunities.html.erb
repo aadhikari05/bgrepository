@@ -5,9 +5,17 @@
 <head>
   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
   <title>Opportunities: <%= controller.action_name %></title>
+  <%= stylesheet_link_tag 'bgov_core' %>
   <%= stylesheet_link_tag 'scaffold' %>
 </head>
 <body>
+<div id="branding">
+<h1>Business.gov - The Official Business Link to the U.S. Government</h1>
+<%= image_tag("bgov_logo.gif") %>
+
+<!-- a href="http://www.business.gov/" id="bgov_logo"><img src="img/bgov_logo.gif" width="292" height="69" alt="Business.gov Logo"></a -->
+</div>
+
 
 <p style="color: green"><%= flash[:notice] %></p>
 

@@ -1,0 +1,484 @@
+/* @override http://business.gov/css/core.css */
+
+/* @group Reset */
+
+html, body, div, span,
+applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dd, dl, dt, li, ol, ul,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-weight: inherit;
+	font-style: inherit;
+	line-height: 1;
+	font-family: inherit;
+	text-align: left;
+	vertical-align: baseline;
+}
+a img, :link img, :visited img {
+	border: 0;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+q:before, q:after,
+blockquote:before, blockquote:after {
+	content: "";
+}
+
+img {
+	border: 0;
+	}
+	a:active, a:focus {
+      outline: 0;
+}
+ul, ol, dl {
+              /*position: relative;*/ 
+              	list-style: none; }
+/* @end */
+
+/* @group Structure */
+
+body {
+	font: 62.8%/1.6 normal Verdana, Helvetica, Arial, sans-serif;
+	background: none;
+}
+	
+#wrapper {
+	width: 100%;
+	margin: 20px;
+	background: none;
+	position: relative;
+}
+#content_wrapper {
+	width: 100%;
+
+	margin-bottom: 10px;
+}
+
+.textcontainer .backToTop a, .s_textcontainer .backToTop a, .l_textcontainer .backToTop a, a#skip, #nav_search, #subfooter, .state_intro .left, .permitme_sq, #footer div  {
+	display: none;
+}
+
+
+/* @group Main Content */
+
+
+#containerMain_green {
+	background: none;
+}
+
+
+#textcontainer_green {
+	background: none;
+	min-height: 290px;
+}
+
+.textcontainer .contact {
+	border-left: 3px double #f60;
+	display: block;
+	padding: 0px 12px;
+	margin-left: 28px;
+}
+
+.textcontainer table tr td {
+	padding: 10px;
+}
+
+.textcontainer table tr td p {
+	margin: 0px;
+	
+}
+
+
+
+table.contact-us {
+	border: 1px solid #b1c3d4;
+	background-color: #ebeff3;
+	margin: 0 auto;
+}
+
+#contact_us {
+	background-image: url(../img/bl-cap-488-6.gif);
+	background-repeat: no-repeat;
+	background-position: top left;
+	width: 238px;
+}
+
+#onThisPage {
+	width: 90%;
+	margin: 10px 10px 25px 20px;
+	display: block;
+	padding-top: 1px;
+}
+
+
+
+/* @end */
+
+/* @group Branding */
+#branding {
+	width: 100%;
+	margin-bottom: 5px;
+	background: none;
+}
+
+#branding h1 {
+	position: absolute;
+	left: -4000px;
+}
+#branding a#bgov_logo {
+	display: block;
+	margin-left: 20px;
+	border: none;
+}
+/* @end */
+
+
+
+/* @group Footer */
+
+#footer {
+	width: 100%;
+	background: none;
+	border-top: solid 1px black;
+}
+
+#footer #footer_about {
+display: block;
+}
+
+#footer h2 {
+	margin: 10px;
+	font-weight: bold;
+	font-size: 1.6em;
+}
+
+#footer p, #footer ul {
+	margin: 10px;
+	line-height: 1.4;
+}
+
+
+/* @end */
+
+/* @end */
+
+/* @group Typography */
+
+
+p {
+	font-size: 1.2em;
+	line-height: 1.5;
+	margin: 0px 20px 10px 20px;
+}
+
+h1 {
+	margin:  0 10px 0 20px;
+	font-size: 2.5em;
+	padding: 0 0 5px 0;
+}
+
+h2 {
+	margin: 20px 0 5px 20px;
+	font-size: 1.8em;
+	padding: 3px 0;
+}
+
+
+h3 {
+	margin: 15px 0 5px 20px;
+	font-size: 1.4em;
+	font-weight: bold;
+}
+h4	{
+	margin-left: 20px;
+	font-size: 1.2em;
+	font-weight: bold;
+}
+
+strong {
+	font-weight: bold;
+}
+ul {
+	margin: 0px 20px 10px 20px;
+	list-style-type: square;
+}
+
+#content_wrapper ul {
+		font-size: 1.2em;
+		list-style-type: square;
+}
+
+#content_wrapper ul ul {
+	font-size: 1em;
+}
+.links {
+	margin: 5px 60px 10px 60px;
+	list-style-type: square;
+}
+
+.links li {
+	background-image: none;
+	padding-left: 0;
+}
+
+.links ul.links {
+	margin-left: 40px;
+}
+#onThisPage .links, #onThisPage_body .links {
+	margin: 0;
+}
+#onThisPage .links li {
+	margin: 5px 0px 5px 30px;
+	font-size: 1.2em;
+}
+
+#onThisPage .links li li {
+	font-size: 1em;
+}
+#onThisPage table .links {
+	margin: 0;
+	font-size: 1em;
+}
+li {
+	margin: 5px 0 10px 0px;
+	line-height: 1.4;
+	padding-left: 10px;
+
+}
+
+.underline {
+	text-decoration: underline;
+}
+
+a:link, a:hover, a:visited {
+	color: black;
+	text-decoration: underline;
+	}
+p a {
+	line-height: 1.4;
+}
+
+
+#onThisPage_header {
+	font-weight: bold;
+	font-size: 1.2em;
+	padding: 5px 25px 5px 25px;
+	margin-top: 5px
+}
+
+#onThisPage .linksTitle {
+	font-weight: bold;
+	font-size: .8em;
+	display: block
+}
+
+.onThisPage_category {
+	font-weight: bold;
+	font-size: .8em;
+	display: block;
+	float: left;
+	padding-left: 23px;
+	padding-bottom: 15px
+}
+
+.textcontainer ol {
+	list-style-type: decimal;
+	margin-top: 5px;
+}
+
+.textcontainer ul.links ul.links{
+	font-size: 1em;
+}
+
+.textcontainer ul.sq {
+	font-size: 0.8em;
+	list-style-type: square;
+	clear: both;
+	list-style-image: none;
+}
+
+#content .textcontainer ul ul li {
+	padding-bottom: 2px;
+	list-style-type: disc;
+	list-style-image: none;
+}
+
+table.data_table{
+font-size: 1.2em;
+line-height: 1.8;
+width: 90%;
+margin: 20px;
+}
+
+th {
+	font-weight: bold;
+	font-size: 1.4em;
+	padding: 10px 5px;
+	border-bottom: solid 1px black;
+}
+
+.contact-us th {
+	border-bottom: none;
+	padding: 10px 5px 5px 5px;
+}
+
+.contact-us input, .contact-us textarea, .contact-us select {
+	margin: 5px;
+}
+.data_table td {
+	padding: 10px 5px;
+	line-height: 1.4;
+}
+span .comment {
+	font-size: .7em;
+	}
+.textcontainer ol#start_steps {
+	list-style-type: none;
+	margin-left: 0;
+	padding: 0;
+}
+
+.textcontainer ol#start_steps li {
+	margin: 15px 20px 0 20px;
+	text-indent: 0;
+	background: url(../img/gray_square.gif) no-repeat;
+}
+
+.textcontainer ol#start_steps li li {
+	margin: 5px;
+	padding: 0;
+}
+
+ol#start_steps .links {
+	margin-left: 40px;
+	list-style-type: square;
+}
+.textcontainer ol#start_steps .links li {
+	list-style-type: none;
+	background-image: none;
+}
+
+.step_number {
+	font-weight: bold;
+		font-size: 1.6em;
+		display: block;
+		margin: 10px 0;
+		text-indent: 20px;
+}
+/* @end */
+
+/* @group state pages */
+
+.state_intro {
+	background: none;
+}
+
+body .state_intro ul.links {
+	margin: 0 20px 20px 30px;
+}
+.state_intro ul.links li {
+margin: 0 0 10px 0;
+	
+}
+
+/* @group state start guides */
+
+.textcontainer ol#start_steps {
+	list-style-type: none;
+	margin-left: 0;
+	padding: 0;
+
+}
+
+.textcontainer ol#start_steps li {
+	margin: 5px 20px;
+	padding: 15px;
+	background-image:none;
+	text-indent: 0;
+}
+
+.textcontainer ol#start_steps li li {
+	margin-bottom: 3px;
+	padding: 0;
+}
+
+ol#start_steps .links {
+	margin-left: 40px;
+}
+.step_number {
+	font-weight: bold;
+		font-size: 1.6em;
+		display: block;
+		margin: 10px 0;
+		text-indent: 20px;
+}
+
+/* @end */
+
+/* @group State How Do I? Widgets */
+
+.how_do_i_state {
+	border: 1px solid black;
+	padding: 10px;
+	width: 400px;
+}
+
+.how_do_i_state .links {
+	margin-right: 10px;
+}
+
+#how_do_i_content {
+	width: 300px;
+}
+#how_do_i h3 {
+	font-size: .9em;
+}
+
+/* @end */
+
+/* @end */
+
+/* @group callouts & widgets */
+
+.widget, .gadget, .feature, .community_info, .grants, .callout, .contacts, .did_you_know, .project_suggestion, .resources {
+background-color: #cfcfcf;
+padding: 10px;
+margin-top: 10px;
+}
+.widget h3, .gadget h3, .feature h3, .community h3, .callout h3, .contacts h3, .did_you_know h3, .grants h3, .permitme_sq h3, .project_suggestion h3, .resources h3 {
+	margin: 5px;
+	}
+.widget  ul li, .gadget ul li, .feature ul li, .community ul li, .callout  ul li, .contacts ul li, .did_you_know ul li, .grants ul li, .project_suggestion ul li, .resources ul li {
+	margin: 5px 0 0 0;
+	line-height: 1.4;
+}
+
+.top {
+	margin: 0px auto;
+}
+.bottom {
+	text-align: center;
+	margin: 0 auto;
+}
+
+.bottom img {
+	margin: 0 auto;
+
+}
+.callout h2, .widget h2 {
+	margin-top: 20px;
+	font-size: 1.4em;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+/* @end */
