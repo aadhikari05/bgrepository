@@ -22819,3 +22819,143 @@ OjpGbGFzaEhhc2h7AAY6CkB1c2VkewAiDWtleXdvcmRzIgA=--2cf051e6aac8de3ae84bcfd649116f
 Rendering template within layouts/opportunities
 Rendering opportunities/search
 Completed in 0.27641 (3 reqs/sec) | Rendering: 0.01635 (5%) | DB: 0.25258 (91%) | 200 OK [http://127.0.0.1/solicitation/search/]
+  [4;36;1mSQL (0.000121)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.000113)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSetaside Load (0.000791)[0m   [0;1mSELECT * FROM `setasides` ORDER BY s_type[0m
+  [4;35;1mSolicitationType Load (0.000332)[0m   [0mSELECT * FROM `solicitation_types` ORDER BY s_type[0m
+  [4;36;1mState Load (0.000713)[0m   [0;1mSELECT * FROM `states` ORDER BY name[0m
+
+
+Processing OpportunitiesController#search (for 127.0.0.1 at 2009-11-29 22:38:18) [GET]
+  Session ID: BAh7DCISb25seV9yZWNvdmVyeSIAIg1zb2xfdHlwZSIAIg1zZXRhc2lkZSIA
+Ogxjc3JmX2lkIiU5MzVjZDYxOWRhY2QyMjA5YjZlZmU1MTllNzU1OWVmNCIO
+cG9wX3N0YXRlIgAiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNo
+OjpGbGFzaEhhc2h7AAY6CkB1c2VkewAiDWtleXdvcmRzIgA=--d68b9cc262ac55af5989ad2a1b71fcac97ae18c2
+  Parameters: {"action"=>"search", "controller"=>"opportunities"}
+  [4;35;1mOpportunity Load (0.003009)[0m   [0mSELECT * FROM `opportunities` WHERE ( (opportunities.active_ind = true OR (opportunities.active_ind is null AND opportunities.resp_date >= '2009-11-29T22:38:18-05:00') OR (opportunities.active_ind is null AND opportunities.resp_date is null AND opportunities.sol_date is not null AND opportunities.sol_date >= '2009-11-15 03:38:18 UTC') ) AND opportunities.setaside != '' AND opportunities.setaside !='N/A' ) LIMIT 0, 20[0m
+  [4;36;1mOpportunity Columns (0.003089)[0m   [0;1mSHOW FIELDS FROM `opportunities`[0m
+  [4;35;1mSQL (0.295105)[0m   [0mSELECT count(*) AS count_all FROM `opportunities` WHERE ( (opportunities.active_ind = true OR (opportunities.active_ind is null AND opportunities.resp_date >= '2009-11-29T22:38:18-05:00') OR (opportunities.active_ind is null AND opportunities.resp_date is null AND opportunities.sol_date is not null AND opportunities.sol_date >= '2009-11-15 03:38:18 UTC') ) AND opportunities.setaside != '' AND opportunities.setaside !='N/A' ) [0m
+Rendering template within layouts/opportunities
+Rendering opportunities/search
+  [4;36;1mState Columns (0.001971)[0m   [0;1mSHOW FIELDS FROM `states`[0m
+  [4;35;1mSolicitationType Columns (0.001676)[0m   [0mSHOW FIELDS FROM `solicitation_types`[0m
+  [4;36;1mSetaside Columns (0.001623)[0m   [0;1mSHOW FIELDS FROM `setasides`[0m
+Completed in 0.33611 (2 reqs/sec) | Rendering: 0.02134 (6%) | DB: 0.30854 (91%) | 200 OK [http://127.0.0.1/solicitation/search/]
+  [4;35;1mSetaside Load (0.000708)[0m   [0mSELECT * FROM `setasides` ORDER BY s_type[0m
+  [4;36;1mSolicitationType Load (0.000404)[0m   [0;1mSELECT * FROM `solicitation_types` ORDER BY s_type[0m
+  [4;35;1mState Load (0.000877)[0m   [0mSELECT * FROM `states` ORDER BY name[0m
+
+
+Processing OpportunitiesController#search (for 127.0.0.1 at 2009-11-29 22:38:27) [POST]
+  Session ID: BAh7DCISb25seV9yZWNvdmVyeSIAIg1zb2xfdHlwZSIAOgxjc3JmX2lkIiU5
+MzVjZDYxOWRhY2QyMjA5YjZlZmU1MTllNzU1OWVmNCINc2V0YXNpZGUiACIO
+cG9wX3N0YXRlIgAiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNo
+OjpGbGFzaEhhc2h7AAY6CkB1c2VkewAiDWtleXdvcmRzIgA=--2cf051e6aac8de3ae84bcfd649116f914632efba
+  Parameters: {"commit"=>"Search", "sol_type"=>"SUBSOL", "setaside"=>"", "authenticity_token"=>"6b9eace12559c9b8a2b1b7dddaab359e46b11bee", "action"=>"search", "controller"=>"opportunities", "pop_state"=>"", "keywords"=>""}
+  [4;36;1mOpportunity Load (0.371611)[0m   [0;1mSELECT * FROM `opportunities` WHERE ( (opportunities.active_ind = true OR (opportunities.active_ind is null AND opportunities.resp_date >= '2009-11-29T22:38:27-05:00') OR (opportunities.active_ind is null AND opportunities.resp_date is null AND opportunities.sol_date is not null AND opportunities.sol_date >= '2009-11-15 03:38:27 UTC') ) AND opportunities.setaside != '' AND opportunities.setaside !='N/A' AND opportunities.sol_type LIKE '%SUBSOL%' ) LIMIT 0, 20[0m
+Rendering template within layouts/opportunities
+Rendering opportunities/search
+  [4;35;1mState Columns (0.021183)[0m   [0mSHOW FIELDS FROM `states`[0m
+  [4;36;1mSolicitationType Columns (0.026806)[0m   [0;1mSHOW FIELDS FROM `solicitation_types`[0m
+  [4;35;1mSetaside Columns (0.025100)[0m   [0mSHOW FIELDS FROM `setasides`[0m
+  [4;36;1mOpportunity Columns (0.006170)[0m   [0;1mSHOW FIELDS FROM `opportunities`[0m
+Completed in 0.57889 (1 reqs/sec) | Rendering: 0.12168 (21%) | DB: 0.45286 (78%) | 200 OK [http://127.0.0.1/solicitation/search]
+  [4;35;1mSetaside Load (0.000728)[0m   [0mSELECT * FROM `setasides` ORDER BY s_type[0m
+  [4;36;1mSolicitationType Load (0.000432)[0m   [0;1mSELECT * FROM `solicitation_types` ORDER BY s_type[0m
+  [4;35;1mState Load (0.000666)[0m   [0mSELECT * FROM `states` ORDER BY name[0m
+
+
+Processing OpportunitiesController#search (for 127.0.0.1 at 2009-11-29 22:38:42) [POST]
+  Session ID: BAh7DCISb25seV9yZWNvdmVyeSIAIg1zb2xfdHlwZSILU1VCU09MIg1zZXRh
+c2lkZSIAOgxjc3JmX2lkIiU5MzVjZDYxOWRhY2QyMjA5YjZlZmU1MTllNzU1
+OWVmNCIOcG9wX3N0YXRlIgAiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6
+OkZsYXNoOjpGbGFzaEhhc2h7AAY6CkB1c2VkewAiDWtleXdvcmRzIgA=--e38c457acc5964b0bfa4b2a73a338363d7043535
+  Parameters: {"commit"=>"Search", "sol_type"=>"SUBSOL", "setaside"=>"Service-Disabled Veteran-Owned Small Business", "authenticity_token"=>"6b9eace12559c9b8a2b1b7dddaab359e46b11bee", "action"=>"search", "controller"=>"opportunities", "pop_state"=>"", "keywords"=>""}
+  [4;36;1mOpportunity Load (0.289232)[0m   [0;1mSELECT * FROM `opportunities` WHERE ( (opportunities.active_ind = true OR (opportunities.active_ind is null AND opportunities.resp_date >= '2009-11-29T22:38:42-05:00') OR (opportunities.active_ind is null AND opportunities.resp_date is null AND opportunities.sol_date is not null AND opportunities.sol_date >= '2009-11-15 03:38:42 UTC') ) AND opportunities.setaside != '' AND opportunities.setaside !='N/A' AND opportunities.sol_type LIKE '%SUBSOL%' AND opportunities.setaside LIKE '%Service-Disabled Veteran-Owned Small Business%' ) LIMIT 0, 20[0m
+Rendering template within layouts/opportunities
+Rendering opportunities/search
+  [4;35;1mState Columns (0.002592)[0m   [0mSHOW FIELDS FROM `states`[0m
+  [4;36;1mSolicitationType Columns (0.001679)[0m   [0;1mSHOW FIELDS FROM `solicitation_types`[0m
+  [4;35;1mSetaside Columns (0.001820)[0m   [0mSHOW FIELDS FROM `setasides`[0m
+  [4;36;1mOpportunity Columns (0.003417)[0m   [0;1mSHOW FIELDS FROM `opportunities`[0m
+Completed in 0.32238 (3 reqs/sec) | Rendering: 0.01742 (5%) | DB: 0.30057 (93%) | 200 OK [http://127.0.0.1/solicitation/search]
+  [4;35;1mSetaside Load (0.000584)[0m   [0mSELECT * FROM `setasides` ORDER BY s_type[0m
+  [4;36;1mSolicitationType Load (0.000434)[0m   [0;1mSELECT * FROM `solicitation_types` ORDER BY s_type[0m
+  [4;35;1mState Load (0.000649)[0m   [0mSELECT * FROM `states` ORDER BY name[0m
+
+
+Processing OpportunitiesController#search (for 127.0.0.1 at 2009-11-29 22:40:06) [POST]
+  Session ID: BAh7DCISb25seV9yZWNvdmVyeSIAIg1zb2xfdHlwZSILU1VCU09MOgxjc3Jm
+X2lkIiU5MzVjZDYxOWRhY2QyMjA5YjZlZmU1MTllNzU1OWVmNCINc2V0YXNp
+ZGUiMlNlcnZpY2UtRGlzYWJsZWQgVmV0ZXJhbi1Pd25lZCBTbWFsbCBCdXNp
+bmVzcyIOcG9wX3N0YXRlIgAiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6
+OkZsYXNoOjpGbGFzaEhhc2h7AAY6CkB1c2VkewAiDWtleXdvcmRzIgA=--bde64b652fe8e9d52fbb87e3b46b84d50427bc5d
+  Parameters: {"commit"=>"Search", "sol_type"=>"SUBSOL", "setaside"=>"Service-Disabled Veteran-Owned Small Business", "authenticity_token"=>"6b9eace12559c9b8a2b1b7dddaab359e46b11bee", "action"=>"search", "controller"=>"opportunities", "pop_state"=>"", "keywords"=>""}
+  [4;36;1mOpportunity Load (0.283211)[0m   [0;1mSELECT * FROM `opportunities` WHERE ( (opportunities.active_ind = true OR (opportunities.active_ind is null AND opportunities.resp_date >= '2009-11-29T22:40:06-05:00') OR (opportunities.active_ind is null AND opportunities.resp_date is null AND opportunities.sol_date is not null AND opportunities.sol_date >= '2009-11-15 03:40:06 UTC') ) AND opportunities.setaside != '' AND opportunities.setaside !='N/A' AND opportunities.sol_type LIKE '%SUBSOL%' AND opportunities.setaside LIKE '%Service-Disabled Veteran-Owned Small Business%' ) LIMIT 0, 20[0m
+Rendering template within layouts/opportunities
+Rendering opportunities/search
+  [4;35;1mState Columns (0.002395)[0m   [0mSHOW FIELDS FROM `states`[0m
+  [4;36;1mSolicitationType Columns (0.001830)[0m   [0;1mSHOW FIELDS FROM `solicitation_types`[0m
+  [4;35;1mSetaside Columns (0.001493)[0m   [0mSHOW FIELDS FROM `setasides`[0m
+  [4;36;1mOpportunity Columns (0.005212)[0m   [0;1mSHOW FIELDS FROM `opportunities`[0m
+Completed in 0.31626 (3 reqs/sec) | Rendering: 0.01615 (5%) | DB: 0.29581 (93%) | 200 OK [http://127.0.0.1/solicitation/search]
+  [4;35;1mSetaside Load (0.000703)[0m   [0mSELECT * FROM `setasides` ORDER BY s_type[0m
+  [4;36;1mSolicitationType Load (0.000405)[0m   [0;1mSELECT * FROM `solicitation_types` ORDER BY s_type[0m
+  [4;35;1mState Load (0.000675)[0m   [0mSELECT * FROM `states` ORDER BY name[0m
+
+
+Processing OpportunitiesController#search (for 127.0.0.1 at 2009-11-29 22:40:56) [POST]
+  Session ID: BAh7DCISb25seV9yZWNvdmVyeSIAIg1zb2xfdHlwZSILU1VCU09MIg1zZXRh
+c2lkZSIyU2VydmljZS1EaXNhYmxlZCBWZXRlcmFuLU93bmVkIFNtYWxsIEJ1
+c2luZXNzOgxjc3JmX2lkIiU5MzVjZDYxOWRhY2QyMjA5YjZlZmU1MTllNzU1
+OWVmNCIOcG9wX3N0YXRlIgAiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6
+OkZsYXNoOjpGbGFzaEhhc2h7AAY6CkB1c2VkewAiDWtleXdvcmRzIgA=--5ef5d2eda983ffe5ca9923b2bb56bc601707825e
+  Parameters: {"commit"=>"Search", "only_recovery"=>"only_recovery", "sol_type"=>"SUBSOL", "setaside"=>"Service-Disabled Veteran-Owned Small Business", "authenticity_token"=>"6b9eace12559c9b8a2b1b7dddaab359e46b11bee", "action"=>"search", "controller"=>"opportunities", "pop_state"=>"", "keywords"=>""}
+  [4;36;1mOpportunity Load (0.275707)[0m   [0;1mSELECT * FROM `opportunities` WHERE ( opportunities.recovery_ind = true AND (opportunities.active_ind = true OR (opportunities.active_ind is null AND opportunities.resp_date >= '2009-11-29T22:40:56-05:00') OR (opportunities.active_ind is null AND opportunities.resp_date is null AND opportunities.sol_date is not null AND opportunities.sol_date >= '2009-11-15 03:40:56 UTC') ) AND opportunities.setaside != '' AND opportunities.setaside !='N/A' AND opportunities.sol_type LIKE '%SUBSOL%' AND opportunities.setaside LIKE '%Service-Disabled Veteran-Owned Small Business%' ) LIMIT 0, 20[0m
+Rendering template within layouts/opportunities
+Rendering opportunities/search
+  [4;35;1mState Columns (0.002562)[0m   [0mSHOW FIELDS FROM `states`[0m
+  [4;36;1mSolicitationType Columns (0.001882)[0m   [0;1mSHOW FIELDS FROM `solicitation_types`[0m
+  [4;35;1mSetaside Columns (0.001675)[0m   [0mSHOW FIELDS FROM `setasides`[0m
+Completed in 0.29854 (3 reqs/sec) | Rendering: 0.01102 (3%) | DB: 0.28361 (94%) | 200 OK [http://127.0.0.1/solicitation/search]
+  [4;36;1mSetaside Load (0.000761)[0m   [0;1mSELECT * FROM `setasides` ORDER BY s_type[0m
+  [4;35;1mSolicitationType Load (0.000547)[0m   [0mSELECT * FROM `solicitation_types` ORDER BY s_type[0m
+  [4;36;1mState Load (0.000667)[0m   [0;1mSELECT * FROM `states` ORDER BY name[0m
+
+
+Processing OpportunitiesController#search (for 127.0.0.1 at 2009-11-29 22:41:01) [POST]
+  Session ID: BAh7DCISb25seV9yZWNvdmVyeSISb25seV9yZWNvdmVyeSINc29sX3R5cGUi
+C1NVQlNPTDoMY3NyZl9pZCIlOTM1Y2Q2MTlkYWNkMjIwOWI2ZWZlNTE5ZTc1
+NTllZjQiDXNldGFzaWRlIjJTZXJ2aWNlLURpc2FibGVkIFZldGVyYW4tT3du
+ZWQgU21hbGwgQnVzaW5lc3MiDnBvcF9zdGF0ZSIAIgpmbGFzaElDOidBY3Rp
+b25Db250cm9sbGVyOjpGbGFzaDo6Rmxhc2hIYXNoewAGOgpAdXNlZHsAIg1r
+ZXl3b3JkcyIA--0c82ae218f22be1ea6fa6f68ddee53e702d74355
+  Parameters: {"commit"=>"Search", "only_recovery"=>"only_recovery", "sol_type"=>"SUBSOL", "setaside"=>"", "authenticity_token"=>"6b9eace12559c9b8a2b1b7dddaab359e46b11bee", "action"=>"search", "controller"=>"opportunities", "pop_state"=>"", "keywords"=>""}
+  [4;35;1mOpportunity Load (0.276896)[0m   [0mSELECT * FROM `opportunities` WHERE ( opportunities.recovery_ind = true AND (opportunities.active_ind = true OR (opportunities.active_ind is null AND opportunities.resp_date >= '2009-11-29T22:41:01-05:00') OR (opportunities.active_ind is null AND opportunities.resp_date is null AND opportunities.sol_date is not null AND opportunities.sol_date >= '2009-11-15 03:41:01 UTC') ) AND opportunities.setaside != '' AND opportunities.setaside !='N/A' AND opportunities.sol_type LIKE '%SUBSOL%' ) LIMIT 0, 20[0m
+Rendering template within layouts/opportunities
+Rendering opportunities/search
+  [4;36;1mState Columns (0.002387)[0m   [0;1mSHOW FIELDS FROM `states`[0m
+  [4;35;1mSolicitationType Columns (0.001615)[0m   [0mSHOW FIELDS FROM `solicitation_types`[0m
+  [4;36;1mSetaside Columns (0.004405)[0m   [0;1mSHOW FIELDS FROM `setasides`[0m
+Completed in 0.29887 (3 reqs/sec) | Rendering: 0.00798 (2%) | DB: 0.28728 (96%) | 200 OK [http://127.0.0.1/solicitation/search]
+  [4;35;1mSetaside Load (0.000724)[0m   [0mSELECT * FROM `setasides` ORDER BY s_type[0m
+  [4;36;1mSolicitationType Load (0.000465)[0m   [0;1mSELECT * FROM `solicitation_types` ORDER BY s_type[0m
+  [4;35;1mState Load (0.000652)[0m   [0mSELECT * FROM `states` ORDER BY name[0m
+
+
+Processing OpportunitiesController#search (for 127.0.0.1 at 2009-11-29 22:41:07) [POST]
+  Session ID: BAh7DCISb25seV9yZWNvdmVyeSISb25seV9yZWNvdmVyeSINc29sX3R5cGUi
+C1NVQlNPTCINc2V0YXNpZGUiADoMY3NyZl9pZCIlOTM1Y2Q2MTlkYWNkMjIw
+OWI2ZWZlNTE5ZTc1NTllZjQiDnBvcF9zdGF0ZSIAIgpmbGFzaElDOidBY3Rp
+b25Db250cm9sbGVyOjpGbGFzaDo6Rmxhc2hIYXNoewAGOgpAdXNlZHsAIg1r
+ZXl3b3JkcyIA--8c9b7cc79e79cbbd08ed1e67945713da0fb2ab6a
+  Parameters: {"commit"=>"Search", "only_recovery"=>"only_recovery", "sol_type"=>"", "setaside"=>"", "authenticity_token"=>"6b9eace12559c9b8a2b1b7dddaab359e46b11bee", "action"=>"search", "controller"=>"opportunities", "pop_state"=>"", "keywords"=>""}
+  [4;36;1mOpportunity Load (0.086964)[0m   [0;1mSELECT * FROM `opportunities` WHERE ( opportunities.recovery_ind = true AND (opportunities.active_ind = true OR (opportunities.active_ind is null AND opportunities.resp_date >= '2009-11-29T22:41:07-05:00') OR (opportunities.active_ind is null AND opportunities.resp_date is null AND opportunities.sol_date is not null AND opportunities.sol_date >= '2009-11-15 03:41:07 UTC') ) AND opportunities.setaside != '' AND opportunities.setaside !='N/A' ) LIMIT 0, 20[0m
+  [4;35;1mOpportunity Columns (0.003486)[0m   [0mSHOW FIELDS FROM `opportunities`[0m
+  [4;36;1mSQL (0.225671)[0m   [0;1mSELECT count(*) AS count_all FROM `opportunities` WHERE ( opportunities.recovery_ind = true AND (opportunities.active_ind = true OR (opportunities.active_ind is null AND opportunities.resp_date >= '2009-11-29T22:41:07-05:00') OR (opportunities.active_ind is null AND opportunities.resp_date is null AND opportunities.sol_date is not null AND opportunities.sol_date >= '2009-11-15 03:41:07 UTC') ) AND opportunities.setaside != '' AND opportunities.setaside !='N/A' ) [0m
+Rendering template within layouts/opportunities
+Rendering opportunities/search
+  [4;35;1mState Columns (0.002289)[0m   [0mSHOW FIELDS FROM `states`[0m
+  [4;36;1mSolicitationType Columns (0.001904)[0m   [0;1mSHOW FIELDS FROM `solicitation_types`[0m
+  [4;35;1mSetaside Columns (0.001665)[0m   [0mSHOW FIELDS FROM `setasides`[0m
+Completed in 0.35826 (2 reqs/sec) | Rendering: 0.02764 (7%) | DB: 0.32382 (90%) | 200 OK [http://127.0.0.1/solicitation/search]
