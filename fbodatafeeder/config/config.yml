@@ -1,6 +1,6 @@
 
 database:
-  host: localhost
+  host: searchdb
   schema: bgsearch_development
   username: bgdata
   password: bgdata
