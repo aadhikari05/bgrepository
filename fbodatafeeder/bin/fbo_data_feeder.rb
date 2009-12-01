@@ -8,7 +8,7 @@
  
 
 class FBODataFeeder
-  LOAD_DATA_AFTER_DATE = DateTime.strptime("20091115",'%Y%m%d')
+  LOAD_DATA_AFTER_DATE = DateTime.strptime("20091120",'%Y%m%d')
   def run
     feedData
     feedRecoveryData
