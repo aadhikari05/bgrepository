@@ -16,10 +16,10 @@ class CreateOpportunities < ActiveRecord::Migration
       t.datetime :resp_date
       t.date :archive_date
       t.string :archive_policy
-      t.string :sol_desc, :limit => 65535
+      t.text :sol_desc, :limit => 65535
       t.string :link_url
       t.string :link_desc
-      t.string :contact, :limit => 65535, :null => false
+      t.text :contact, :limit => 65535, :null => false
       t.string :contact_email, :limit => 128
       t.string :contact_email_desc
       t.string :setaside, :limit => 1000
