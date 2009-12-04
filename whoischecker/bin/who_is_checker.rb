@@ -67,7 +67,7 @@ class WhoIsChecker
           end
         end
       end
-      puts "Generated output file -"+outputFile
+      puts "\nGenerated output file -"+outputFile
     end
   end
   
@@ -124,20 +124,41 @@ class WhoIsChecker
         end
         #puts org
       end
-      
+    end
+    if !found
+      org = parseMultiARINRecord(whoIsInfo)
     end
     org
   end
   
-  
+  def parseMultiARINRecord(whoIsInfo)
+    org_names = whoIsInfo
+    org_names_array = Array.new
+    lineCounter = 0
+    whoIsInfo.each_line do |line|
+      if lineCounter%2==0 && !line.index("(NET").nil?
+        if !org_names_array.include?(line[0..line.index("(NET")-1])
+          org_names_array << line[0..line.index("(NET")-1]
+        end
+      end
+      lineCounter = lineCounter+1
+    end
+    if org_names_array.length >0
+      org_names = "";
+      org_names_array.each {|x| org_names = org_names+x+"| " }
+      org_names = org_names[0..-3]
+    end
+    #puts org_names
+    org_names
+  end
   
   
 end
 
 WhoIsChecker.new().run
-#WhoIsChecker.new().whoIsOrganizationTest(' 80.212.80.179')
-#WhoIsChecker.new().whoIsOrganizationTest(' google.it')
-#WhoIsChecker.new().whoIsOrganizationTest(' 12.156.194.3')
+#WhoIsChecker.new().whoIsOrganizationTest('80.212.80.179')
+#WhoIsChecker.new().whoIsOrganizationTest('google.it')
+#WhoIsChecker.new().whoIsOrganization('12.156.194.3')
 #WhoIsChecker.new().whoIsOrganization('130.237.61.137')
 
 
