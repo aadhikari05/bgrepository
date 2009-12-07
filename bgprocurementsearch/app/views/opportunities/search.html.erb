@@ -27,40 +27,31 @@
 		</tr>
 	 
 	</table>
-	<%= %>
+
 <% end %> 
 
 <h1>Search Result</h1>
 <%= page_entries_info @opportunities, :entry_name => 'opportunities' %>
 
 <%= will_paginate @opportunities %>
-<table border=1>
+<table border=1 width="80%" align="center" cellspacing="2" cellpadding="2">
   <tr>
-  	<th>Solicitation Number</th>
-	<th>Agency</th>
-    <th>Solicitation Type</th>
-    <th>Solicitation Date</th>
-	<th>Response Date</th>
-	<th>Description</th>
-    <th>Setaside(s)</th>
-    <th >POP State(s)</th>
-    <th>Recovery Indicator</th>
+  	<th width='40%'>Opportunity</th>
+	<th width='20%'><%= sort_link 'Agency/Company', :agency %></th>
+    <th width='15%'><%= sort_link 'Solicitation Types', :sol_type %></th>
+    <th width='10%'><%= sort_link 'Posted On', :sol_date %></th>
+	<th width='15%'><%= sort_link 'Response Date', :resp_date %></th>
   </tr>
 
 <% for opportunity in @opportunities %>
   <tr>
   	
-  	<td><%= link_to opportunity.sol_nbr, opportunity %></td>
+  	<td><%= link_to opportunity.subject, opportunity %>&nbsp; <%=h opportunity.sol_nbr %></td>
 	<td><%=h opportunity.agency %></td>
-    <td><%=h opportunity.sol_type %></td>
-    <td><%=h opportunity.sol_date %></td>
-    <td><%=h opportunity.resp_date %></td>
-	<td><%=h opportunity.sol_desc[0..255] %></td>
-    <td><%=h opportunity.setaside %></td>
-    <td style="WORD-BREAK:BREAK-ALL"><%=h opportunity.pop_state %></td>
-    <td><%=h opportunity.recovery_ind %></td>
-    
-    
+    <td><%=h @sol_types_hash[opportunity.sol_type] %></td>
+    <td><%=h opportunity.sol_date_formatted %></td>
+    <td><%=h opportunity.resp_date_formatted %></td>
+	
   </tr>
 <% end %>
 </table>

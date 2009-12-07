@@ -3,6 +3,7 @@ class OpportunitiesController < ApplicationController
   def initialize
     @setasides = Setaside.find(:all, :order => "s_type")
     @sol_types = SolicitationType.find(:all, :order => "s_type")
+    @sol_types_hash = retrieve_sol_type_hash
     @states = State.find(:all, :order => "name")
   end
   
@@ -25,8 +26,10 @@ class OpportunitiesController < ApplicationController
     @only_recovery = param_value('only_recovery')
     @only_recovery_flag = @only_recovery=="only_recovery"
     @keywords = param_value('keywords')
+    @sort_c = param_value('sort_c')
+    @sort_c = param_value('sort_d')
     #@opportunities = Opportunity.search @keywords, :max_matches => 10_000, :page => params[:page], :per_page => 20, :conditions => conditions
-    @opportunities = Opportunity.paginate  :page => params[:page], :per_page => 20, :conditions => conditions
+    @opportunities = Opportunity.paginate  :page => params[:page], :per_page => 20, :conditions => conditions, :order =>sort_order('created_at')
 
     respond_to do |format|
       format.html # index.html.erb
@@ -174,5 +177,16 @@ private
     " opportunities.recovery_ind = true " unless !@only_recovery_flag
   end
 
+  def retrieve_sol_type_hash
+    soltype_hash = {}
+    @sol_types.each do |sol_type| 
+      soltype_hash[sol_type.s_value] = sol_type.s_type
+    end
+    soltype_hash
+  end
+  
+  def sort_order(default)
+      "#{(params[:sort_c] || default.to_s).gsub(/[\s;'\"]/,'')} #{params[:sort_d] == 'down' ? 'DESC' : 'ASC'}"
+  end
  
 end

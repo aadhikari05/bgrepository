@@ -1,5 +1,5 @@
 <p><b> Solicitation Details</b> </p>
-<table width="100%" border="1" cellspacing="0" cellpadding="2">
+<table width="80%" border="1" cellspacing="0" cellpadding="2" align="center">
 	 <tr>
         <td><b>Title:</b></td>
         <td colspan=3> <%=h @opportunity.subject %></td>
@@ -8,7 +8,7 @@
 	 	<% 
 			primeSolNbrBlock = ""
 			if !@opportunity.prime_sol_nbr.nil? && @opportunity.prime_sol_nbr!=""
-				primeSolNbrBlock = "<br>Prime:"+@opportunity.prime_sol_nbr
+				primeSolNbrBlock = "\nPrime:"+@opportunity.prime_sol_nbr
 			end
 	 	%>
         <td width="15%"><b>Solicitation Number:</b></td>
@@ -18,13 +18,13 @@
     </tr>
     <tr>
         <td><b>Solicitation Type:</b></td>
-        <td><%=h @opportunity.sol_type %></td>
+        <td><%=h @sol_types_hash[@opportunity.sol_type] %></td>
         <td><b>Solicitation Date:</b></td>
-        <td> <%=h @opportunity.sol_date %></td>
+        <td> <%=h @opportunity.sol_date_formatted %></td>
     </tr>
 	<tr>
         <td><b>Response Date:</b></td>
-        <td><%=h @opportunity.resp_date %></td>
+        <td><%=h @opportunity.resp_date_formatted %></td>
         <td><b>Archive Date:</b></td>
         <td> <%=h @opportunity.archive_date %></td>
     </tr>
