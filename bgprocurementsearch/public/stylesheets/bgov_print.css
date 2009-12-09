@@ -107,7 +107,7 @@ table.contact-us {
 }
 
 #contact_us {
-	background-image: url(../img/bl-cap-488-6.gif);
+	background-image: url(../images/bl-cap-488-6.gif);
 	background-repeat: no-repeat;
 	background-position: top left;
 	width: 238px;
@@ -351,7 +351,7 @@ span .comment {
 .textcontainer ol#start_steps li {
 	margin: 15px 20px 0 20px;
 	text-indent: 0;
-	background: url(../img/gray_square.gif) no-repeat;
+	background: url(../images/gray_square.gif) no-repeat;
 }
 
 .textcontainer ol#start_steps li li {

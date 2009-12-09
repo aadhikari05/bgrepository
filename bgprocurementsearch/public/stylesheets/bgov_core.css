@@ -39,8 +39,7 @@ span.discuss_btn {
 #procurement_search {
 	margin: 20px;
 	padding: 10px;
-	background: #e3e3cb;
-		/*width: 460px;*/	/*background: #f8eedf url(../images/gadget.png) no-repeat center top;*/	padding: 10px 10px 10px 40px;		margin: 10px 20px;
+	background: #f8eedf url(../images/procurement.png) no-repeat center center;	padding: 10px 10px 10px 40px;		margin: 10px 20px;
 }
 
 #procurement_search p {
@@ -49,9 +48,7 @@ span.discuss_btn {
 #procurement_search_col1, #procurement_search_col2 {
 	float: left;
 	display: inline;
-
 }
-
 #procurement_search_col2 {
 	margin-top: 35px;
 }
@@ -96,6 +93,25 @@ span.discuss_btn {
 	margin: 5px auto 10px auto;
 	font-size: 1.2em;
 	text-align: center;
+}
+
+#solicitation_div {
+	margin: 20px;
+	padding: 10px;
+	background: #f8eedf url(../images/procurement.png) no-repeat center 100px;
+	padding: 10px;		margin: 10px 20px;
+}
+ #solicitation_div_col1, #solicitation_div_col2 {
+	float: left;
+	display: inline;
+	width: 48%;
+	margin-bottom: 20px;
+}
+#solicitation_div_col1 {
+	/*border-right: 1px solid black;*/
+}
+#solicitation_description {
+	clear: both;
 }
 /* @end */.search_button, .pmButton {	border: solid 2px #b1c3d4;	border-right: solid 2px #6b7680;	border-bottom: solid 2px #6b7680;	color: white;	padding: 2px 5px;	font-weight: bold;	width: 65px;	display: inline;	background: #237c94 url(../images/globalNavdefault.gif) center center repeat-x;	margin-top: 2px;}.search_button:active {	border: solid 2px #6b7680;	border-right: solid 2px #b1c3d4;	border-bottom: solid 2px #b1c3d4;}div.n {	margin-left: 20px;	text-align: center;	font-size: 1.6em;}div.n table {	margin: 0 auto;}table.results_summary {	width: 250px;}.textcontainer  #recommended_sites table tr td {	font-size: 1.2em;}table.results_summary tr td {	display: block;	margin-left: 20px;	margin-bottom: 10px;	padding: 0;}#and {	font: bold .8em Arial;	color: #237c94;	text-align: left;	width: auto;	padding-left: 62px;	display: block;	float: left;	margin-bottom: 10px;	}br {	clear: left;}table.contact_us{    border:  1px solid #b1c3d4;	background-color: #ebeff3;}#disambig {	font-size: .9em;		}#disambig a{	font-size: .9em;		}/* @group Loans & Grants Tool */.checked_box {		background-color: #98c3a5;}/* @group Loans & Grants Start Page */#fund_search h2 {	font-weight: bold;	padding:0;	font-size: 1.6em;	margin-left: 30px;}#fund_search {	margin: 0 0 0 20px;	width: 690px;	float: left;	display: inline;	position: relative;	padding: 0;	background: #e8e4d7 url(../images/funding_header_bg4.jpg) no-repeat left -45px;}
 

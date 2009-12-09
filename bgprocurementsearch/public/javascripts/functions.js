@@ -556,6 +556,6 @@ function onYouTubePlayerReady(playerId) {
 
 
 function procurementStripes() {
-	$("#procurement_results tr:nth-child(even)").css("background-color","#e3e3cb");
+	$("#procurement_results tr:nth-child(even)").css("background-color","#f8eedf");
 }
 $(document).ready(function() {procurementStripes();});
