@@ -30,6 +30,7 @@ class SubnetDataFeeder
           
         when /^Description:/    
           opportunity.sol_desc = line.split(/^Description:/)[1].to_s.strip
+          opportunity.subject = opportunity.sol_desc
         when /^NAICS Code:/    
           opportunity.naics = line.split(/^NAICS Code:/)[1].to_s.strip
         when /^Place of performance:/    

@@ -10,56 +10,54 @@ class LinksChecker
   
   def run
     #brokenLinks = Array.new
-#    sites.each  do |link|
-#      check_response = LinkChecker.check(link.url)
-#      if(!check_response.isLive?)
-#        link.checker_response_code = check_response.response_code
-#        puts link.unique_id+"-"+link.url+"-"+link.checker_response_code
-#        create_broken_link(link)
-#        #brokenLinks << link
-#      end
-#    end
-#    permitme_sites.each  do |link|
-#      check_response = LinkChecker.check(link.url)
-#      if(!check_response.isLive?)
-#        link.checker_response_code = check_response.response_code
-#        puts link.unique_id+"-"+link.url+"-"+link.checker_response_code
-#        create_broken_link(link)
-#        #brokenLinks << link
-#      end
-#    end
-#    recommended_site_urls.each  do |link|
-#      check_response = LinkChecker.check(link.url)
-#      if(!check_response.isLive?)
-#        link.checker_response_code = check_response.response_code
-#        puts link.unique_id+"-"+link.url+"-"+link.checker_response_code
-#        create_broken_link(link)
-#        #brokenLinks << link
-#      end
-#    end
-#    grant_loans.each  do |link|
-#      check_response = LinkChecker.check(link.url)
-#      if(!check_response.isLive?)
-#        link.checker_response_code = check_response.response_code
-#        puts link.unique_id+"-"+link.url+"-"+link.checker_response_code
-#        create_broken_link(link)
-#        #brokenLinks << link
-#      end
-#    end
-    permitme_resources.each  do |link|
-      if(link.unique_id.to_i>100)
-        check_response = LinkChecker.check(link.url)
-        if(!check_response.isLive?)
-          link.checker_response_code = check_response.response_code
-          puts link.unique_id+"-"+link.url.to_s+"-"+link.checker_response_code
-          if broken_link_exist?(link)
-            update_broken_link(link)  
-          else
-            create_broken_link(link)  
-          end
-          #brokenLinks << link
-        end
+    sites.each  do |link|
+      check_response = LinkChecker.check(link.url)
+      if(!check_response.isLive?)
+        link.checker_response_code = check_response.response_code
+        puts link.unique_id+"-"+link.url+"-"+link.checker_response_code
+        create_broken_link(link)
+        #brokenLinks << link
       end
+    end
+    permitme_sites.each  do |link|
+      check_response = LinkChecker.check(link.url)
+      if(!check_response.isLive?)
+        link.checker_response_code = check_response.response_code
+        puts link.unique_id+"-"+link.url+"-"+link.checker_response_code
+        create_broken_link(link)
+        #brokenLinks << link
+      end
+    end
+    recommended_site_urls.each  do |link|
+      check_response = LinkChecker.check(link.url)
+      if(!check_response.isLive?)
+        link.checker_response_code = check_response.response_code
+        puts link.unique_id+"-"+link.url+"-"+link.checker_response_code
+        create_broken_link(link)
+        #brokenLinks << link
+      end
+    end
+    grant_loans.each  do |link|
+      check_response = LinkChecker.check(link.url)
+      if(!check_response.isLive?)
+        link.checker_response_code = check_response.response_code
+        puts link.unique_id+"-"+link.url+"-"+link.checker_response_code
+        create_broken_link(link)
+        #brokenLinks << link
+      end
+    end
+    permitme_resources.each  do |link|
+      check_response = LinkChecker.check(link.url)
+      if(!check_response.isLive?)
+        link.checker_response_code = check_response.response_code
+        puts link.unique_id+"-"+link.url.to_s+"-"+link.checker_response_code
+        if broken_link_exist?(link)
+          update_broken_link(link)  
+        else
+          create_broken_link(link)  
+        end
+        #brokenLinks << link
+      end     
     end
     state_recommended_sites.each  do |link|
       check_response = LinkChecker.check(link.url)
