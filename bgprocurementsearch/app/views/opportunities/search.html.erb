@@ -1,46 +1,57 @@
 
-<% form_tag("/solicitation/search", :method => "post") do %>  
-	<table border=1>
-		<tr>
-			<td><%= label_tag(:pop_state, "Performance State:") %></td>  
-			<td><%= select_tag('pop_state', "<option value="" >All POP States</option>"+options_from_collection_for_select(@states, 'alpha', 'name', @pop_state) ) %></td>
-		</tr>
-		<tr>
-			<td><%= label_tag(:sol_type, "Solicitation Type:") %></td>  
-			<td><%= select_tag('sol_type', "<option value="" >All Solicitation Types</option>"+options_from_collection_for_select(@sol_types, 's_value', 's_type', @sol_type) ) %></td> 
-			  
-		</tr>
-		<tr>
-			<td><%= label_tag(:setaside, "Setaside Type:") %></td>  
-			<td><%= select_tag('setaside', "<option value="" >All Setaside Types</option>"+options_from_collection_for_select(@setasides, 's_value', 's_type', @setaside) ) %></td> 
- 		</tr>
-		<tr>
-			<td><%= label_tag(:recovery_ind, "Only Recovery:") %></td>  
-			<td><%= check_box_tag('only_recovery', 'only_recovery', @only_recovery_flag) %></td>  
-		</tr>
-		<tr>
-			<td><%= label_tag(:keywords, "Keywords:") %></td>  
-			<td><%= text_field_tag(:keywords, @keywords) %></td>  
-		</tr>
-		<tr>
-			<td colspan=2><%= submit_tag("Search") %></td>
-		</tr>
-	 
-	</table>
-
+<div id="wrapper">
+	<div id="content_wrapper">
+				<a name="skip_menu"></a>
+	<div id="branding">
+	<h1>Business.gov - The Official Business Link to the U.S. Government</h1>
+	<a href="/index.html" id="bgov_logo"><%= image_tag 'bgov_logo.gif' %></a>
+	</div>
+	
+	<div class="textcontainer">
+		
+<% form_tag("/solicitation/search", :method => "post", :id => "procurement_search", :class => "group") do %> 
+<div id="procurement_search_col1"> 
+<h3>Search for Procurments</h3>	
+	
+		<p>
+		<%= label_tag(:pop_state, "Performance State:") %>
+		<%= select_tag('pop_state', "<option value="" >All POP States</option>"+options_from_collection_for_select(@states, 'alpha', 'name', @pop_state) ) %>
+		</p>
+		<p>
+		<%= label_tag(:sol_type, "Solicitation Type:") %>	
+		<%= select_tag('sol_type', "<option value="" >All Solicitation Types</option>"+options_from_collection_for_select(@sol_types, 's_value', 's_type', @sol_type) ) %>
+		</p>
+		<p>
+		<%= label_tag(:setaside, "Setaside Type:") %>	
+		<%= select_tag('setaside', "<option value="" >All Setaside Types</option>"+options_from_collection_for_select(@setasides, 's_value', 's_type', @setaside) ) %>
+		</p>	
+	</div> <!-- procurement_search_col1 -->
+	<div id="procurement_search_col2">
+		<p>
+		<%= label_tag(:recovery_ind, "Only Recovery:") %>	
+		<%= check_box_tag('only_recovery', 'only_recovery', @only_recovery_flag) %>
+		</p>
+		<p>
+		<%= label_tag(:keywords, "Keywords:") %>	
+		<%= text_field_tag(:keywords, @keywords) %>	
+		<%= submit_tag("Search") %>
+		</p>
+		
+	</div> <!-- procurement_search_col2 -->
+	
 <% end %> 
 
 <h1>Search Result</h1>
-<%= page_entries_info @opportunities, :entry_name => 'opportunities' %>
+<p><%= page_entries_info @opportunities, :entry_name => 'opportunities' %></p>
 
-<%= will_paginate @opportunities %>
-<table border=1 width="80%" align="center" cellspacing="2" cellpadding="2">
+<!--%= will_paginate @opportunities % -->
+<table  cellspacing="2" cellpadding="2" id="procurement_results"  >
   <tr>
-  	<th width='40%'>Opportunity</th>
-	<th width='20%'><%= sort_link 'Agency/Company', :agency %></th>
-    <th width='15%'><%= sort_link 'Solicitation Types', :sol_type %></th>
-    <th width='10%'><%= sort_link 'Posted On', :sol_date %></th>
-	<th width='15%'><%= sort_link 'Response Date', :resp_date %></th>
+  	<th >Opportunity</th>
+	<th ><%= sort_link 'Agency/Company', :agency %></th>
+    <th ><%= sort_link 'Solicitation Types', :sol_type %></th>
+    <th ><%= sort_link 'Posted On', :sol_date %></th>
+	<th ><%= sort_link 'Response Date', :resp_date %></th>
   </tr>
 
 <% for opportunity in @opportunities %>
@@ -56,6 +67,8 @@
 <% end %>
 </table>
 
-<br />
+<br/>
 <%= will_paginate @opportunities %>
 
+	</div> <!-- textcontainer -->
+</div> <!-- content_wrapper -->

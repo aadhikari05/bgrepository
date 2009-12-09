@@ -1,25 +1,308 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
-  <title>Opportunities: <%= controller.action_name %></title>
-  <%= stylesheet_link_tag 'bgov_core' %>
-  <%= stylesheet_link_tag 'scaffold' %>
+<meta name="google-site-verification" content="7hBH1WuAti73nvKX9_4Vycs-8yMGrTVjOYnyxTe_hkA" />
+<meta name="msvalidate.01" content="BADA7BECAD324920BDEDF9A4DC8A8EFA" />
+<meta name="y_key" content="c9dde47850716c7c">
+<meta name="verify-v1" content="R/k+7myRXG97IDI97iaEJx3TvBIW27XOWhb4R7zpHtw=" />
+<title>Business.gov - Official Business Link to the U.S. Government</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<!-- Description and Keywords Meta Tag -->
+<meta name="description" content="Business.gov provides information and resources that help small businesses comply with federal, state and local business laws and government regulations." />
+<meta name="keywords" content="business law, federal regulations, small business, government regulations" />
+<meta name="classification" content="Internet" />
+<meta name="distribution" content="Global" />
+<meta name="rating" content="Safe For Kids" />
+<meta name="copyright" content="public domain" />
+<meta name="language" content="en" />
+
+<%= stylesheet_link_tag 'bgov_core' %>
+<!--link href="css/bgov_core.css" rel="stylesheet" type="text/css"/ -->
+
+<!--[if IE]><link rel="stylesheet" href="css/bgov_ie-fixes.css" type="text/css" media="screen" /><![endif]-->
+<%= stylesheet_link_tag 'bgov_print',:media=>'print' %>
+<!--link href="css/bgov_print.css" rel="stylesheet" type="text/css" media="print"/ -->
+
+<!-- <script type="text/javascript" src="javascript/crumbs.js"></script> -->
+<%= javascript_include_tag 'jquery-1.2.6.min.js', :charset => "utf-8" %>
+<%= javascript_include_tag 'nav_main_external_procurement.js', :charset => "utf-8" %>
+<%= javascript_include_tag 'functions.js', :charset => "utf-8" %>
+<%= javascript_include_tag 'jquery-1.2.6.min.js', :charset => "utf-8" %>
+
+<!--script src="javascript/jquery-1.2.6.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="javascript/nav_main_external_procurement.js" type="text/javascript" charset="utf-8"></script>
+<script src="javascript/functions.js" type="text/javascript" charset="utf-8"></script>
+
+<script src="javascript/jquery-1.2.6.min.js" type="text/javascript" charset="utf-8"></script -->
+
+
+
+   <script type="text/javascript">
+<!--
+        function resetForms() {
+          for (var i = 0; i < document.forms.length; i++ ) {
+              document.forms[i].reset();
+          }
+        }
+        
+		function validate(formCheck) {
+if (formCheck.pmType.value == "0") {
+alert('Please choose a Business Type first.');
+formCheck.pmType.focus();
+return false;
+}
+if (formCheck.pmAddress.value == "City & State or Zip Code" || formCheck.pmAddress.value == "") {
+alert('Please enter a City & State or Zip Code.');
+formCheck.pmAddress.focus();
+return false;
+}
+return true; 
+}
+      //--></script>
 </head>
-<body>
-<div id="branding">
-<h1>Business.gov - The Official Business Link to the U.S. Government</h1>
-<%= image_tag("bgov_logo.gif") %>
 
-<!-- a href="http://www.business.gov/" id="bgov_logo"><img src="img/bgov_logo.gif" width="292" height="69" alt="Business.gov Logo"></a -->
-</div>
+<body class="home_page">
+<!-- BEGIN COREMETRICS SUPPORT -->
 
 
-<p style="color: green"><%= flash[:notice] %></p>
+<!--script language="javascript1.2" 
+ src="/coremetrics/v40/eluminate.js"
+ type="text/javascript">
+</script>
+<script language="javascript1.2" 
+ src="/coremetrics/cmdatatagutils.js"
+ type="text/javascript">
+</script -->
+<script language="javascript1.2"
+ type="text/javascript">
+<!--
+cmSetProduction();
+cmCreatePageviewTag("Business.gov - Official Business Link to the U.S. Government","Home",null,null);
+//-->
+</script>
+<!-- END COREMETRICS -->
+
+
 
 <%= yield  %>
 
+
+<div id="nav_search">
+	
+	<h2><label for="general_search_box">Search Federal, State &amp; Local Sites</label></h2>
+		<form method="get" action="http://search.business.gov/search.do">
+			<input tabindex="1" type="text" size="25" name="q" id="general_search_box"/>
+			<input tabindex="2" type="submit" value="Search" name="btnG"  class="search_button"/>
+		</form>
+
+		<a class="skip" href="#skip_menu" tabindex="-1">skip navigation</a>
+
+		<ul id="nav_main" class="menu collapsible">
+				 <script type="text/javascript">
+					<!--
+					document.write(navMain());
+					//-->
+				</script>
+			</ul>
+			
+		<div id="default_nav">
+			<h3>JavaScript is not currently enabled</h3>
+			<p>Enabling Javascript will provide the best viewing experience.</p>
+			<p>Use the Business.gov site map <a href="/sitemap/">here</a></p>
+			
+			<ul id="default_nav_ul">
+				<li>Start a Business
+					<ul id="start_a_business_nav">
+							<li><a href="/start/start-a-business.html">Steps to Starting a Business</a></li>	
+							<li><a href="/start/business-plan.html">Write a Business Plan</a></li>
+							<li><a href="/start/franchises/">Franchises &amp; Opportunities</a></li>
+							<li><a href="/start/business-location/">Business Location &amp; Zoning</a></li>
+							<li><a href="/start/assistance.html">Training &amp; Assistance</a></li>
+							<li><a href="/start/green-business/">Start a Green Business</a></li>
+							<li class="no_link">Resources for:</li>	
+							<li><a href="/start/home-based/">Home Based Businesses</a></li>
+							<li><a href="/start/self-employed/">Self-Employment</a></li>
+							<li><a href="/start/disabled-people/">Disabled People</a></li>				
+							<li><a href="/start/minority-owned/">Minority Owned Businesses</a></li>
+							<li><a href="/start/non-profits/">Non Profit Organizations</a></li>
+							<li><a href="/start/veteran-owned/">Veteran Owned Businesses</a></li>
+							<li><a href="/start/woman-owned/">Women Owned Businesses</a></li>
+						</ul> <!-- start_a_business_nav -->
+						</li>
+					<li>Register, Licenses &amp; Permits
+						<ul id="register_nav">
+							<li><a href="/register/steps-to-register.html">Steps to Registering a Business</a></li>
+							<li><a href="/register/business-name/">Business Names</a></li>
+							<li><a href="/register/incorporation/">Incorporate a Business</a></li>
+							<li><a href="/register/licenses-and-permits/">Licenses &amp; Permits</a></li>
+						</ul> <!-- register_nav -->
+						</li>
+
+					<li>Finance &amp; Taxes
+						<ul id="finance_nav">
+						<li><a href="/finance/financing/">Loans &amp; Grants</a></li>
+							<li><a href="/finance/business-insurance/">Business Insurance</a></li>
+							<li><a href="/finance/managing-finances/">Managing Finances</a></li>
+							<li><a href="/finance/taxes/">Taxes</a></li>
+						</ul> <!-- finance_nav -->
+
+						</li>
+					<li>Expand Your Business
+						<ul id="expand_bus_nav">
+							<li><a href="/expand/marketing/">Marketing &amp; Advertising</a></li>
+							<li><a href="/expand/business-data/">Business Data &amp; Statistics</a></li>
+							<li><a href="/expand/government-contracting/">Government Contracting</a></li>
+							<li><a href="/expand/import-export/">Import / Export</a></li>
+							<li><a href="/expand/green-business/">Green Business Practices</a></li>
+							</ul></li>
+					<li>Stay Compliant with Laws
+						<ul id="compliant_nav">
+							<li><a href="/business-law/advertising-law/">Advertising Law</a></li>
+							<li><a href="/business-law/employment/">Employment &amp; Labor Law</a></li>
+							<li><a href="/business-law/employment/hiring/">Hiring &amp; Managing Employees</a></li>
+							<li><a href="/business-law/employment/employee-benefits/">Employee Benefits</a></li>
+							<li><a href="/business-law/employment/wages/">Wage &amp; Hour Laws</a></li>
+							<li><a href="/business-law/employment/discrimination/">Discrimination &amp; Harassment</a></li>
+							<li><a href="/business-law/employment/drug-free.html">Drug Free Workplace</a></li>
+							<li><a href="/business-law/employment/unions/">Unions</a></li>
+							<li><a href="/business-law/employment/workers-compensation/">Workers&rsquo; Compensation</a></li>
+							<li><a href="/business-law/employment/posters/">Workplace Posters</a></li>
+							<li><a href="/business-law/employment/terminating/">Terminating Employees</a></li>
+							<li><a href="/business-law/environmental-regulations/">Environmental Regulations</a></li>
+							<li><a href="/business-law/finance/">Finance Law</a></li>
+							<li><a href="/business-law/intellectual-property/">Patents, Trademarks, Copyright</a></li>
+							<li><a href="/business-law/online-business/">Online Business</a></li>
+							<li><a href="/business-law/privacy/">Privacy Laws</a></li>
+							<li><a href="/business-law/ucc/">Uniform Commercial Code</a></li>
+							<li><a href="/business-law/workplace-safety/">Workplace Safety &amp; Health</a></li>
+							<li class="no_link">Resources:</li>
+							<li><a href="/business-law/forms/">Forms</a></li>
+							<li><a href="/business-law/contacts/">Contact a Government Agency</a></li>
+
+						</ul> <!-- compliant_nav -->
+						</li>
+					<li>Industries
+						<ul id="industries_nav">
+							<li><a href="/industries/defense/">Aerospace &amp; Defense</a></li>
+							<li><a href="/industries/agribusiness/">Agriculture</a></li>
+							<li><a href="/industries/automotive/">Automotive</a></li>
+							<li><a href="/industries/chemical/">Chemicals</a></li>
+							<li><a href="/industries/construction/">Construction &amp; Facilities</a></li>
+							<li><a href="/industries/consumer-goods/">Consumer Goods &amp; Services</a></li>
+							<li><a href="/industries/energy/">Energy</a></li>
+							<li><a href="/industries/financial-services/">Financial Services</a></li>
+							<li><a href="/industries/firearms/">Firearms &amp; Explosives</a></li>
+							<li><a href="/industries/food/">Food &amp; Beverage</a></li>
+							<li><a href="/industries/health-care/">Health Care</a></li>
+							<li><a href="/industries/manufacturing/">Manufacturing</a></li>
+							<li><a href="/industries/mining/">Mining &amp; Drilling</a></li>
+							<li><a href="/industries/pharm-and-biotech/">Pharmaceuticals &amp; Biotech</a></li>
+							<li><a href="/industries/printing/">Printing &amp; Publishing</a></li>
+							<li><a href="/industries/real-estate/">Real Estate</a></li>
+							<li><a href="/industries/telecommunications/">Telecommunications</a></li>
+							<li><a href="/industries/transportation/">Transportation &amp; Logistics</a></li>
+						</ul> <!-- industries_nav -->
+						</li>
+					<li>State &amp; Local
+					<ul id="state_nav">
+					
+						<li><a href="/states/">Browse the Map</a></li>
+						</ul><!-- state_nav -->
+						</li>
+
+						<li>About Us
+							<ul id="about_us_nav">
+								<li><a href="/about/about-us.html">About Business.gov</a></li>
+								<li><a href="/about/awards.html">Awards</a></li>
+
+								<li><a href="/about/features/">Features, Tools &amp; Gadgets</a></li>	
+								<li><a href="/about/partnership-program/">Partnership Program</a></li>
+								<li><a href="/about/press/">Press</a></li>
+								<li><a href="/about/link-to-us/">Link to Us</a></li>
+								<li><a href="/about/contact-us/">Contact Us</a></li>
+
+								<li><a href="/about/pmo/">Program Management</a></li>
+								<li><a href="/about/policies/">Site Policies</a></li>
+							</ul> <!-- about_us_nav -->
+							</li>
+					<li>Join Our Community
+							<ul id="community_nav">
+								<li><a href="/community/preview.html">Find Out More</a></li>
+								<li><a href="/community/sign-up.html">Email Updates</a></li>
+							</ul> <!-- community_nav -->
+						</li>
+			</ul> <!-- nav_default -->
+			
+		</div> <!-- default_nav -->
+		<script type="text/javascript" charset="utf-8">
+	<!--
+			var navSearch = document.getElementById("nav_search")
+			var defaultNav = document.getElementById("default_nav")
+			navSearch.removeChild (defaultNav);
+		//-->
+		</script>
+
+			
+			<p id="newsletter_signup"><a href="http://service.govdelivery.com/service/multi_subscribe.html?code=USBUSINESS&origin=http://business.gov/email-subscription/success.html" rel="external">Sign up</a> for e-mail updates</p>
+			
+			<ul id="social_media_btns">
+				<li id="twitter_li"><a href="http://twitter.com/BusinessDotGov/?cm_sp=SocialMedia-_-NavigationBar-_-Twitter" rel="external">Twitter</a></li>
+				<li id="facebook_li"><a href="http://www.facebook.com/business.gov?cm_sp=SocialMedia-_-NavigationBar-_-FaceBook" rel="external">Facebook</a></li>
+				<li id="youtube_li"><a href="http://www.youtube.com/user/BusinessDotGov?cm_sp=SocialMedia-_-NavigationBar-_-YouTube" rel="external">YouTube</a></li>
+				<li id="google_li"><a href="http://business.gov/about/features/gadget.html?cm_sp=SocialMedia-_-NavigationBar-_-Gadget" rel="external">Google</a></li>
+			</ul> <!-- social_media_btns -->
+			
+			
+			
+			<a name="skip_menu"></a>
+			
+			<!-- AddThis Button BEGIN -->
+			<script type="text/javascript">addthis_pub  = 'businessdotgov';</script>
+			<a id="addthis" href="http://www.addthis.com/bookmark.php" onmouseover="return addthis_open(this, '', '[URL]', '[TITLE]')" onmouseout="addthis_close()" onclick="return addthis_sendto()"><img src="http://s9.addthis.com/button1-bm.gif" width="125" height="16" border="0" alt="Addthis" /></a><script type="text/javascript" src="http://s7.addthis.com/js/152/addthis_widget.js"></script>
+			<!-- AddThis Button END -->
+</div> <!-- nav_search -->
+
+	<div class="clear">
+		
+	</div> <!-- clear -->
+	
+	<div id="footer">
+			<div id="footer_about">
+				<h2>About Business.gov</h2>
+				<p>Business.gov helps small businesses understand their legal requirements, and locate government services supporting the nation&rsquo;s small business community.</p>
+				<p>Business.gov is an official site of the U.S. Government.</p>
+			</div>
+
+
+	<div id="footer_question">
+	<h2>Have a Question or Comment?</h2>
+	<ul>
+		<li><a href="http://community.business.gov/">Ask in the Community Forums</a></li>
+		<li><a href="/business-law/contacts/">Contact a Government Agency</a></li>	
+		<li><a href="/about/contact-us/">Contact Business.gov</a></li>
+	</ul>
+	</div> <!-- footer_popular -->
+
+
+	<div id="footer_tools">
+	<h2>Tools and Resources</h2>
+	<ul>	
+		<li><a href="http://search.business.gov/startLoans.html">Find Loans and Grants</a></li>
+		<li><a href="/register/licenses-and-permits/">Obtain Licenses and Permits</a></li>
+		<li><a href="/business-law/forms/">Download Forms</a></li>
+		<li><a href="/expand/green-business/energy-efficiency/">Become Energy Efficient</a></li>
+
+	</ul>
+	</div> <!-- footer_popular -->
+	</div><!-- footer -->
+	<div id="subfooter">
+			<p>
+				<a href="/sitemap/">Site Map</a> | <a href="/about/policies/privacy/ ">Privacy Policy</a> | <a  href="/about/policies/">Website Policies</a> | <a onclick="javascript:urchinTracker('/outgoing/www.usa.gov');" href="http://www.usa.gov/">USA.gov</a> | <a onclick="javascript:urchinTracker('/outgoing/www.regulations.gov');" href="http://www.regulations.gov/">Regulations.gov</a> | <a  onclick="javascript:urchinTracker('/outgoing/www.whitehouse.gov');" href="http://www.whitehouse.gov/">White House</a> | <a href="http://www.recovery.gov/">Recovery.gov</a>
+			</p>
+						<p>This site was <!--script src="/javascript/datemod.js" language="javascript" type="text/javascript"></script--></p>
+
+	</div> <!-- subfooter -->
+</div>
 </body>
 </html>
