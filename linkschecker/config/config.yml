@@ -1,0 +1,9 @@
+
+database:
+  host: localhost
+  schema: bgsearch_development
+  username: bgdata
+  password: bgdata
+  
+
+ 
