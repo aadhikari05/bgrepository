@@ -10,6 +10,7 @@ class LinksChecker
   
   def run
     #brokenLinks = Array.new
+    puts Time.new.to_s+" Links Checker Start..."
     sites.each  do |link|
       check_response = LinkChecker.check(link.url)
       if(!check_response.isLive?)
@@ -76,7 +77,7 @@ class LinksChecker
     
     
     #puts brokenLinks.length
-    
+    puts Time.new.to_s+" ... Links Checker END"
   end
   
   

@@ -19,7 +19,7 @@ class WhoIsChecker
   # reads all the csv files in the input folder, checks if a corresponding output file already exists
   # if it does  not then it goes ahead and generates the output file
   def run
-    puts "WhoIsChecker ...START"
+    puts Time.now.to_s+" WhoIsChecker ...START"
     if (!inputFolder.nil? && !outputFolder.nil?)
       # check path specified are folders
       if (File.directory?(inputFolder) && File.directory?(outputFolder))
@@ -45,7 +45,7 @@ class WhoIsChecker
     else
       puts "input folder="+inputFolder+"outputFolder="+outputFolder+". Cannot proceed further"
     end
-    puts "WhoIsChecker ... END"
+    puts Time.now.to_s+" WhoIsChecker ... END"
   end
   
   # parses the input file and generates the output file
