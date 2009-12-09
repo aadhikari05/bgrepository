@@ -10,8 +10,10 @@
 class FBODataFeeder
   LOAD_DATA_AFTER_DATE = DateTime.strptime("20091120",'%Y%m%d')
   def run
+    puts Time.new.to_s+" FBO Data Feeder Start..."
     feedData
     feedRecoveryData
+    puts Time.new.to_s+"...FBO Data Feeder END"
   end
   
   
