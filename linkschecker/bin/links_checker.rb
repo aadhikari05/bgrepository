@@ -15,7 +15,7 @@ class LinksChecker
       check_response = LinkChecker.check(link.url)
       if(!check_response.isLive?)
         link.checker_response_code = check_response.response_code
-        puts link.unique_id+"-"+link.url+"-"+link.checker_response_code
+        puts link.unique_id+"-"+link.url.to_s+"-"+link.checker_response_code
         create_broken_link(link)
         #brokenLinks << link
       end
@@ -24,7 +24,7 @@ class LinksChecker
       check_response = LinkChecker.check(link.url)
       if(!check_response.isLive?)
         link.checker_response_code = check_response.response_code
-        puts link.unique_id+"-"+link.url+"-"+link.checker_response_code
+        puts link.unique_id+"-"+link.url.to_s+"-"+link.checker_response_code
         create_broken_link(link)
         #brokenLinks << link
       end
@@ -33,7 +33,7 @@ class LinksChecker
       check_response = LinkChecker.check(link.url)
       if(!check_response.isLive?)
         link.checker_response_code = check_response.response_code
-        puts link.unique_id+"-"+link.url+"-"+link.checker_response_code
+        puts link.unique_id+"-"+link.url.to_s+"-"+link.checker_response_code
         create_broken_link(link)
         #brokenLinks << link
       end
@@ -42,7 +42,7 @@ class LinksChecker
       check_response = LinkChecker.check(link.url)
       if(!check_response.isLive?)
         link.checker_response_code = check_response.response_code
-        puts link.unique_id+"-"+link.url+"-"+link.checker_response_code
+        puts link.unique_id+"-"+link.url.to_s+"-"+link.checker_response_code
         create_broken_link(link)
         #brokenLinks << link
       end
@@ -64,7 +64,7 @@ class LinksChecker
       check_response = LinkChecker.check(link.url)
       if(!check_response.isLive?)
         link.checker_response_code = check_response.response_code
-        puts link.unique_id+"-"+link.url+"-"+link.checker_response_code
+        puts link.unique_id+"-"+link.url.to_s+"-"+link.checker_response_code
         if broken_link_exist?(link)
           update_broken_link(link)  
         else
