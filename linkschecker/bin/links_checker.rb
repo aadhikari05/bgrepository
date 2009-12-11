@@ -11,76 +11,55 @@ class LinksChecker
   def run
     #brokenLinks = Array.new
     puts Time.new.to_s+" Links Checker Start..."
+    puts "Start Sites"
     sites.each  do |link|
-      check_response = LinkChecker.check(link.url)
-      if(!check_response.isLive?)
-        link.checker_response_code = check_response.response_code
-        puts link.unique_id+"-"+link.url.to_s+"-"+link.checker_response_code
-        create_broken_link(link)
-        #brokenLinks << link
-      end
+      check_link(link)
     end
+    puts "End Sites"
+    puts "Start Permitme Sites"
     permitme_sites.each  do |link|
-      check_response = LinkChecker.check(link.url)
-      if(!check_response.isLive?)
-        link.checker_response_code = check_response.response_code
-        puts link.unique_id+"-"+link.url.to_s+"-"+link.checker_response_code
-        create_broken_link(link)
-        #brokenLinks << link
-      end
+     check_link(link)
     end
+    puts "End Permitme Sites"
+    puts "Start Recommended Site Urls"
     recommended_site_urls.each  do |link|
-      check_response = LinkChecker.check(link.url)
-      if(!check_response.isLive?)
-        link.checker_response_code = check_response.response_code
-        puts link.unique_id+"-"+link.url.to_s+"-"+link.checker_response_code
-        create_broken_link(link)
-        #brokenLinks << link
-      end
+     check_link(link)
     end
+    puts "End Recommended Site Urls"
+    puts "Start Grant Loans"
     grant_loans.each  do |link|
-      check_response = LinkChecker.check(link.url)
-      if(!check_response.isLive?)
-        link.checker_response_code = check_response.response_code
-        puts link.unique_id+"-"+link.url.to_s+"-"+link.checker_response_code
-        create_broken_link(link)
-        #brokenLinks << link
-      end
+      check_link(link)
     end
+    puts "End Grant Loans"
+    puts "Start Permitme"
     permitme_resources.each  do |link|
-      check_response = LinkChecker.check(link.url)
-      if(!check_response.isLive?)
-        link.checker_response_code = check_response.response_code
-        puts link.unique_id+"-"+link.url.to_s+"-"+link.checker_response_code
-        if broken_link_exist?(link)
-          update_broken_link(link)  
-        else
-          create_broken_link(link)  
-        end
-        #brokenLinks << link
-      end     
+      check_link(link)
     end
+    puts "End Permitme"
+    puts "Start State Recommended Sites"
     state_recommended_sites.each  do |link|
-      check_response = LinkChecker.check(link.url)
-      if(!check_response.isLive?)
-        link.checker_response_code = check_response.response_code
-        puts link.unique_id+"-"+link.url.to_s+"-"+link.checker_response_code
-        if broken_link_exist?(link)
-          update_broken_link(link)  
-        else
-          create_broken_link(link)  
-        end
-        #brokenLinks << link
-      end
+      check_link(link)
     end
-    
-    
-    
+    puts "End State Recommended Sites"
     #puts brokenLinks.length
     puts Time.new.to_s+" ... Links Checker END"
   end
   
   
+ private
+  def check_link(link)
+    check_response = LinkChecker.check(link.url)
+      if(!check_response.isLive?)
+        link.checker_response_code = check_response.response_code
+        puts link.unique_id+"-"+link.url.to_s+"-"+link.checker_response_code
+        if broken_link_exist?(link)
+          update_broken_link(link)  
+        else
+          create_broken_link(link)  
+        end
+        #brokenLinks << link
+      end
+  end
   
   def sites
      links = Array.new
