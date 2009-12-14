@@ -46,4 +46,6 @@ ActionController::Routing::Routes.draw do |map|
   # Install the default routes as the lowest priority.
   
   map.connect '/solicitation/search/', :controller => "opportunities", :action => "search"
+  map.connect 'opportunities/recent10/:setaside', :controller => "opportunities", :action => "recent10"
+  map.connect 'opportunities/recent10/:setaside.:format', :controller => "opportunities", :action => "recent10"
 end

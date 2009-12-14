@@ -36,6 +36,18 @@ class OpportunitiesController < ApplicationController
       format.xml  { render :xml => @opportunities }
     end
   end
+  
+  def recent10
+    @setaside = params[:setaside]
+    @opportunities = Opportunity.find :all,  :conditions => conditions, :order =>sort_order('created_at'), :limit => 10
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.xml  { render :xml => @opportunities }
+      format.json { render :json => @opportunities }
+    end
+     
+  end
 
   # GET /opportunities/1
   # GET /opportunities/1.xml
@@ -45,6 +57,7 @@ class OpportunitiesController < ApplicationController
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @opportunity }
+      format.json { render :json => @opportunity }
     end
   end
 
