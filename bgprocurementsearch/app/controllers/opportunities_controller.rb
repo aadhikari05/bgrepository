@@ -39,7 +39,7 @@ class OpportunitiesController < ApplicationController
   
   def recent10
     @setaside = params[:setaside]
-    @opportunities = Opportunity.find :all,  :conditions => conditions, :order =>sort_order('created_at'), :limit => 10
+    @opportunities = Opportunity.find :all, :select => "id,sol_type,sol_date,agency,subject,sol_nbr,prime_sol_nbr,resp_date",  :conditions => conditions, :order =>sort_order('created_at'), :limit => 10
 
     respond_to do |format|
       format.html # index.html.erb
