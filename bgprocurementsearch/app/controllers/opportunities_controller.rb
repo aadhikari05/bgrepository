@@ -199,7 +199,7 @@ private
   end
   
   def sort_order(default)
-      "#{(params[:sort_c] || default.to_s).gsub(/[\s;'\"]/,'')} #{params[:sort_d] == 'down' ? 'DESC' : 'ASC'}"
+      "#{(params[:sort_c] || default.to_s).gsub(/[\s;'\"]/,'')} #{params[:sort_d] == 'up' ? 'ASC' : 'DESC'}"
   end
  
 end
