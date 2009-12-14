@@ -28,11 +28,12 @@ class ParsedFileDBHandler
      dbh = dbconnection
      # get server version string and display it
      #puts "Server version: " + dbh.get_server_info
-     @result = dbh.query("select file_name from parsed_files")
-     @result.each do |row|
+     result = dbh.query("select file_name from parsed_files")
+     result.each do |row|
         #puts row[0]
         @files << row[0]
      end
+     result.free
      @files
     rescue Mysql::Error => e
       puts "Error code: #{e.errno}"

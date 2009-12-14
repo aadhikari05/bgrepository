@@ -67,8 +67,8 @@ class LinksChecker
      dbh = dbconnection
      # get server version string and display it
      #puts "Server version: " + dbh.get_server_info
-     @result = dbh.query("select id,url,name from sites")
-     @result.each do |row|
+     result = dbh.query("select id,url,name from sites")
+     result.each do |row|
        link = Link.new
        link.group = "FEATURES"
        link.table_name = "SITES"
@@ -78,6 +78,7 @@ class LinksChecker
         #puts row[0]
         links << link
      end
+     result.free
      links
     rescue Mysql::Error => e
       puts "Error code: #{e.errno}"
@@ -94,8 +95,8 @@ class LinksChecker
      dbh = dbconnection
      # get server version string and display it
      #puts "Server version: " + dbh.get_server_info
-     @result = dbh.query("select id,url,name from permitme_sites")
-     @result.each do |row|
+     result = dbh.query("select id,url,name from permitme_sites")
+     result.each do |row|
        link = Link.new
        link.group = "FEATURES"
        link.table_name = "PERMITME_SITES"
@@ -105,6 +106,7 @@ class LinksChecker
         #puts row[0]
         links << link
      end
+     result.free
      links
     rescue Mysql::Error => e
       puts "Error code: #{e.errno}"
@@ -121,8 +123,8 @@ class LinksChecker
      dbh = dbconnection
      # get server version string and display it
      #puts "Server version: " + dbh.get_server_info
-     @result = dbh.query("select id,url from recommended_site_url")
-     @result.each do |row|
+     result = dbh.query("select id,url from recommended_site_url")
+     result.each do |row|
        link = Link.new
        link.group = "FEATURES"
        link.table_name = "RECOMMENDED_SITE_URL"
@@ -132,6 +134,7 @@ class LinksChecker
         #puts row[0]
         links << link
      end
+     result.free
      links
     rescue Mysql::Error => e
       puts "Error code: #{e.errno}"
@@ -148,8 +151,8 @@ class LinksChecker
      dbh = dbconnection
      # get server version string and display it
      #puts "Server version: " + dbh.get_server_info
-     @result = dbh.query("select id,url,title from grant_loans")
-     @result.each do |row|
+     result = dbh.query("select id,url,title from grant_loans")
+     result.each do |row|
        link = Link.new
        link.group = "GRANT_LOANS"
        link.table_name = "GRANT_LOANS"
@@ -159,6 +162,7 @@ class LinksChecker
         #puts row[0]
         links << link
      end
+     result.free
      links
     rescue Mysql::Error => e
       puts "Error code: #{e.errno}"
@@ -175,8 +179,8 @@ class LinksChecker
      dbh = dbconnection
      # get server version string and display it
      #puts "Server version: " + dbh.get_server_info
-     @result = dbh.query("select id,url,link_title from permitme_resources")
-     @result.each do |row|
+     result = dbh.query("select id,url,link_title from permitme_resources")
+     result.each do |row|
        link = Link.new
        link.group = "STATES"
        link.table_name = "PERMITME_RESOURCES"
@@ -186,6 +190,7 @@ class LinksChecker
         #puts row[0]
         links << link
      end
+     result.free
      links
     rescue Mysql::Error => e
       puts "Error code: #{e.errno}"
@@ -202,8 +207,8 @@ class LinksChecker
      dbh = dbconnection
      # get server version string and display it
      #puts "Server version: " + dbh.get_server_info
-     @result = dbh.query("select id,url,title from state_recommended_sites")
-     @result.each do |row|
+     result = dbh.query("select id,url,title from state_recommended_sites")
+     result.each do |row|
        link = Link.new
        link.group = "STATES"
        link.table_name = "STATE_RECOMMENDED_SITES"
@@ -213,6 +218,7 @@ class LinksChecker
         #puts row[0]
         links << link
      end
+     result.free
      links
     rescue Mysql::Error => e
       puts "Error code: #{e.errno}"
@@ -266,10 +272,11 @@ class LinksChecker
     if (link.url.nil?)
       link.url = '';
     end
-    result = dbh.query("SELECT 1 FROM broken_links WHERE table_name='#{link.table_name}' AND unique_id='#{link.unique_id}'")
+    result = dbh.query("SELECT id FROM broken_links WHERE table_name='#{link.table_name}' AND unique_id='#{link.unique_id}'")
     result.each do |row|
       exist_flag = true
     end
+    result.free
     exist_flag 
     rescue Mysql::Error => e
       puts "Error code: #{e.errno}"
