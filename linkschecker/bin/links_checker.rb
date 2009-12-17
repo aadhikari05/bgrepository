@@ -51,6 +51,7 @@ class LinksChecker
     check_response = LinkChecker.check(link.url)
       if(!check_response.isLive?)
         link.checker_response_code = check_response.response_code
+        link.redirect_url = check_response.redirect_url
         puts link.unique_id+"-"+link.url.to_s+"-"+link.checker_response_code
         if broken_link_exist?(link)
           update_broken_link(link)  
@@ -236,7 +237,7 @@ class LinksChecker
      dbh = dbconnection
      # get server version string and display it
      #puts "Server version: " + dbh.get_server_info
-     dbh.query("INSERT INTO broken_links (url,description,response_code,table_name,group_name,unique_id,created_at,updated_at) VALUES ('"+link.url.to_s+"','"+Mysql.quote(link.description.to_s)+"','"+link.checker_response_code.to_s+"','"+link.table_name+"','"+link.group+"','"+link.unique_id+"',current_timestamp,current_timestamp)")
+     dbh.query("INSERT INTO broken_links (url,description,response_code,table_name,group_name,unique_id,redirect_url,created_at,updated_at) VALUES ('"+link.url.to_s+"','"+Mysql.quote(link.description.to_s)+"','"+link.checker_response_code.to_s+"','"+link.table_name+"','"+link.group+"','"+link.unique_id+"','"+link.redirect_url.to_s+"',current_timestamp,current_timestamp)")
      puts "Number of rows inserted: #{dbh.affected_rows}"
     rescue Mysql::Error => e
       puts "Error code: #{e.errno}"
@@ -252,7 +253,7 @@ class LinksChecker
      dbh = dbconnection
      # get server version string and display it
      #puts "Server version: " + dbh.get_server_info
-     dbh.query("UPDATE broken_links  SET url='#{link.url.to_s}', description='#{Mysql.quote(link.description.to_s)}', response_code='#{link.checker_response_code.to_s}', group_name='#{link.group}',updated_at=current_timestamp  WHERE table_name='#{link.table_name}' AND unique_id='#{link.unique_id}'")
+     dbh.query("UPDATE broken_links  SET url='#{link.url.to_s}', description='#{Mysql.quote(link.description.to_s)}', response_code='#{link.checker_response_code.to_s}', group_name='#{link.group}',redirect_url='#{link.redirect_url.to_s}' updated_at=current_timestamp  WHERE table_name='#{link.table_name}' AND unique_id='#{link.unique_id}'")
      puts "Number of rows updated: #{dbh.affected_rows}"
     rescue Mysql::Error => e
       puts "Error code: #{e.errno}"

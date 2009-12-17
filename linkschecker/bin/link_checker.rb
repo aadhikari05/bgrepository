@@ -16,24 +16,33 @@ class LinkChecker
       begin
         url = URI.escape(url.strip)
         uri = URI.parse(url)
-        #uri_base = url
+        uri_base = url
+        init_res_code = ""
         timeout(10) do
-  #        Net::HTTP.open_timeout = 5
-  #        Net::HTTP.read_timeout = 5
           res = Net::HTTP.get_response(uri) 
-#          while (res.code=="301" || res.code=="302") do
-#            redirect_location = res['location'];
-#            if(!redirect_location[/^http/])
-#              redirect_location = uri_base+redirect_location
-#            else
-#              uri_base = redirect_location[0..redirect_location.rindex('/')].strip
-#            end
-#            puts redirect_location +" - "+ uri_base
-#            uri =  URI.parse(redirect_location)
-#            puts uri.path.to_s
-#            res = Net::HTTP.get_response(uri)
-#          end
-          link_check_response.response_code = res.code
+          init_res_code = res.code
+          redirect_location = ""
+          while (res.code=="301" || res.code=="302") do
+            redirect_location = res['location'];
+            if(!redirect_location[/^http/])
+              if(redirect_location[/^\//])     
+                redirect_location = uri_base[0..uri_base.index('/')].strip+redirect_location
+              else
+                redirect_location = uri_base+redirect_location
+              end
+            else
+              uri_base = redirect_location[0..redirect_location.rindex('/')].strip
+            end
+            puts redirect_location +" - "+ uri_base
+            uri =  URI.parse(redirect_location)
+            res = Net::HTTP.get_response(uri)
+          end
+          if(init_res_code=="301" || init_res_code=="302")
+            link_check_response.response_code = init_res_code
+            link_check_response.redirect_url = redirect_location
+          else
+            link_check_response.response_code = res.code
+          end
           link_check_response.time = Time.new
         end # time out block
       rescue TimeoutError => e
@@ -48,7 +57,7 @@ class LinkChecker
         #puts "some other error"
       end
     end
-    #puts link_check_response.response_code+"-"+url.to_s
+    puts link_check_response.response_code+"-"+url.to_s
     return link_check_response
   end
   
@@ -57,7 +66,6 @@ class LinkChecker
 end
 
 
-#LinkChecker.check("http://www.grantalabama.com/")
-#LinkChecker.check("http://www.ci.boaz.al.us/city/")
-#LinkChecker.check("http://www.bridgeportal.org/")
-#LinkChecker.check("http://citronellechamber.com/city_of/")
+#LinkChecker.check("http://www.vec.virginia.gov/vecportal/unins/insemp.cfm")
+
+
