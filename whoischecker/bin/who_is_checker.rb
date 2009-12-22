@@ -89,8 +89,17 @@ class WhoIsChecker
   
   # gets the who is orgname for IP
   def whoIsOrganization(ipOrDomain)
-    a = Whois.query(ipOrDomain)
-    parseWhoIsOrg(a.to_s)
+    org=""  
+    client = Whois::Client.new
+    client.timeout = 120
+    begin
+      a = Whois.query(ipOrDomain)
+      org = parseWhoIsOrg(a.to_s)
+    rescue TimeoutError => e
+      puts ipOrDomain+"--"+e.to_s
+      org ="TIMEOUT-ERROR"
+    end
+    org
   end
   
   def whoIsOrganizationTest(ipOrDomain)
@@ -155,8 +164,8 @@ class WhoIsChecker
   
 end
 
-WhoIsChecker.new().run
-#WhoIsChecker.new().whoIsOrganizationTest('80.212.80.179')
+#WhoIsChecker.new().run
+WhoIsChecker.new().whoIsOrganizationTest('125.60.172.182')
 #WhoIsChecker.new().whoIsOrganizationTest('google.it')
 #WhoIsChecker.new().whoIsOrganization('12.156.194.3')
 #WhoIsChecker.new().whoIsOrganization('130.237.61.137')
