@@ -164,8 +164,8 @@ class WhoIsChecker
   
 end
 
-#WhoIsChecker.new().run
-WhoIsChecker.new().whoIsOrganizationTest('125.60.172.182')
+WhoIsChecker.new().run
+#WhoIsChecker.new().whoIsOrganizationTest('125.60.172.182')
 #WhoIsChecker.new().whoIsOrganizationTest('google.it')
 #WhoIsChecker.new().whoIsOrganization('12.156.194.3')
 #WhoIsChecker.new().whoIsOrganization('130.237.61.137')
