@@ -253,7 +253,7 @@ class LinksChecker
      dbh = dbconnection
      # get server version string and display it
      #puts "Server version: " + dbh.get_server_info
-     dbh.query("UPDATE broken_links  SET url='#{link.url.to_s}', description='#{Mysql.quote(link.description.to_s)}', response_code='#{link.checker_response_code.to_s}', group_name='#{link.group}',redirect_url='#{link.redirect_url.to_s}' updated_at=current_timestamp  WHERE table_name='#{link.table_name}' AND unique_id='#{link.unique_id}'")
+     dbh.query("UPDATE broken_links  SET url='#{link.url.to_s}', description='#{Mysql.quote(link.description.to_s)}', response_code='#{link.checker_response_code.to_s}', group_name='#{link.group}',redirect_url='#{link.redirect_url.to_s}', updated_at=current_timestamp  WHERE table_name='#{link.table_name}' AND unique_id='#{link.unique_id}'")
      puts "Number of rows updated: #{dbh.affected_rows}"
     rescue Mysql::Error => e
       puts "Error code: #{e.errno}"
