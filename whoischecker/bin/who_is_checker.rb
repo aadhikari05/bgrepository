@@ -91,13 +91,20 @@ class WhoIsChecker
   def whoIsOrganization(ipOrDomain)
     org=""  
     client = Whois::Client.new
-    client.timeout = 120
+    client.timeout = 10
+    counter = 0
     begin
+      counter = counter +1
       a = Whois.query(ipOrDomain)
       org = parseWhoIsOrg(a.to_s)
     rescue TimeoutError => e
-      puts ipOrDomain+"--"+e.to_s
-      org ="TIMEOUT-ERROR"
+      if (counter>3)
+        puts ipOrDomain+"--"+e.to_s
+        org ="TIMEOUT-ERROR"
+      else
+        sleep 5
+        retry
+      end
     end
     org
   end
