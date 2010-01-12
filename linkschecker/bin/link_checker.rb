@@ -25,16 +25,25 @@ class LinkChecker
           while (res.code=="301" || res.code=="302") do
             redirect_location = res['location'];
             if(!redirect_location[/^http/])
-              if(redirect_location[/^\//])     
-                redirect_location = uri_base[0..uri_base.index('/')].strip+redirect_location
+              if(redirect_location[/^\//])  
+                if uri_base.index('/',10).nil?
+                  redirect_location = uri_base.strip+redirect_location
+                else
+                  redirect_location = uri_base[0..uri_base.index('/',10)-1].strip+redirect_location
+                end
+                
               else
                 redirect_location = uri_base+redirect_location
               end
             else
-              uri_base = redirect_location[0..redirect_location.rindex('/')].strip
+              if(redirect_location.rindex('/')>10)
+                uri_base = redirect_location[0..redirect_location.rindex('/')].strip
+              else
+                uri_base = redirect_location
+              end
             end
             puts redirect_location +" - "+ uri_base
-            uri =  URI.parse(redirect_location)
+            uri =  URI.parse(URI.escape(redirect_location))
             res = Net::HTTP.get_response(uri)
           end
           if(init_res_code=="301" || init_res_code=="302")
@@ -49,11 +58,18 @@ class LinkChecker
         link_check_response.response_code = "TimeoutError"
         link_check_response.time = Time.new
         #puts e.to_s+"-"+url
-      rescue BadURIError => e
+      rescue URI::BadURIError => e
         link_check_response.response_code = "BadURIError"
         link_check_response.time = Time.new
         #puts e.to_s+"-"+url
-        
+      rescue URI::InvalidURIError => e
+        link_check_response.response_code = "InvalidURIError"
+        link_check_response.time = Time.new
+        #puts e.to_s+"-"+url
+      rescue Net::HTTPBadResponse => e
+        link_check_response.response_code = "HTTPBadResponse"
+        link_check_response.time = Time.new
+        #puts e.to_s+"-"+url
       rescue Exception => e
         link_check_response.response_code = e.to_s
         link_check_response.time = Time.new
@@ -71,6 +87,6 @@ class LinkChecker
 end
 
 
-#LinkChecker.check("http://www.vec.virginia.gov/vecportal/unins/insemp.cfm")
+#LinkChecker.check("http://www.southernshores.org/")
 
 
