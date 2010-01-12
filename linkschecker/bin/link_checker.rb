@@ -46,9 +46,14 @@ class LinkChecker
           link_check_response.time = Time.new
         end # time out block
       rescue TimeoutError => e
-        link_check_response.response_code = e.to_s
+        link_check_response.response_code = "TimeoutError"
         link_check_response.time = Time.new
         #puts e.to_s+"-"+url
+      rescue BadURIError => e
+        link_check_response.response_code = "BadURIError"
+        link_check_response.time = Time.new
+        #puts e.to_s+"-"+url
+        
       rescue Exception => e
         link_check_response.response_code = e.to_s
         link_check_response.time = Time.new
