@@ -10,27 +10,27 @@ class LinksChecker
   
   def run
     #brokenLinks = Array.new
-    puts Time.new.to_s+" Links Checker Start..."
-    puts "Start Sites"
-    sites.each  do |link|
-      check_link(link)
-    end
-    puts "End Sites"
-    puts "Start Permitme Sites"
-    permitme_sites.each  do |link|
-     check_link(link)
-    end
-    puts "End Permitme Sites"
-    puts "Start Recommended Site Urls"
-    recommended_site_urls.each  do |link|
-     check_link(link)
-    end
-    puts "End Recommended Site Urls"
-    puts "Start Grant Loans"
-    grant_loans.each  do |link|
-      check_link(link)
-    end
-    puts "End Grant Loans"
+#    puts Time.new.to_s+" Links Checker Start..."
+#    puts "Start Sites"
+#    sites.each  do |link|
+#      check_link(link)
+#    end
+#    puts "End Sites"
+#    puts "Start Permitme Sites"
+#    permitme_sites.each  do |link|
+#     check_link(link)
+#    end
+#    puts "End Permitme Sites"
+#    puts "Start Recommended Site Urls"
+#    recommended_site_urls.each  do |link|
+#     check_link(link)
+#    end
+#    puts "End Recommended Site Urls"
+#    puts "Start Grant Loans"
+#    grant_loans.each  do |link|
+#      check_link(link)
+#    end
+#    puts "End Grant Loans"
     puts "Start Permitme"
     permitme_resources.each  do |link|
       check_link(link)
@@ -48,23 +48,24 @@ class LinksChecker
   
  private
   def check_link(link)
-    check_response = LinkChecker.check(link.url)
-    if(!check_response.isLive?)
-      link.checker_response_code = check_response.response_code
-      link.redirect_url = check_response.redirect_url
-      puts link.unique_id+"-"+link.url.to_s+"-"+link.checker_response_code
-      if broken_link_exist?(link)
-        update_broken_link(link)  
+    if(!link.nil? && !link.url.nil? && link.url.strip!="")
+      check_response = LinkChecker.check(link.url)
+      if(!check_response.isLive?)
+        link.checker_response_code = check_response.response_code
+        link.redirect_url = check_response.redirect_url
+        puts link.unique_id+"-"+link.url.to_s+"-"+link.checker_response_code
+        if broken_link_exist?(link)
+          update_broken_link(link)  
+        else
+          create_broken_link(link)  
+        end
+        #brokenLinks << link
       else
-        create_broken_link(link)  
+        if broken_link_exist?(link)
+          delete_broken_link(link)  
+        end
       end
-      #brokenLinks << link
-    else
-      if broken_link_exist?(link)
-        delete_broken_link(link)  
-      end
-    end
-    
+    end # if link is not null or empty
   end
   
   def sites
