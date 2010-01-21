@@ -1,0 +1,5 @@
+whoischecker/inputCSVFiles/*
+whoischecker/outputCSVFiles/*
+whoischecker/log/*
+linkschecker/log/*
+fbodatafeeder/log/*
