@@ -2,6 +2,8 @@ require 'rubygems'
 require 'whois'
 require "fastercsv"
 require "yaml"
+require 'fileutils'
+
 
 class WhoIsChecker
   
@@ -32,6 +34,7 @@ class WhoIsChecker
           # ends with .csv and outfile file does not exists
           if(inputFile[/.csv$/] && !File.exist?(outputFolder+inputFile))
             # parse each input file and generate the outputfile
+            #convertToCommaSeperated(inputFolder+inputFile)
             runFile(inputFolder+inputFile,outputFolder+inputFile)
           else
             puts "Either the input file is not in csv format or its already parsed and is in output folder. Hencing skipping file - "+inputFile
@@ -52,33 +55,76 @@ class WhoIsChecker
   def runFile(inputFile,outputFile)
     if !inputFile.nil? && !outputFile.nil?
       rowCount = 0
+      user_ids_with_posts = Array.new
+      ips_all = Array.new
+      ips_with_post = Array.new
+      ips_repeated = Array.new
+      FasterCSV.foreach( inputFile, {:col_sep => "\t"}) do  |row|
+        if rowCount>2
+          #puts str_val+","+(str_val.to_i > 0).to_s
+          if(!row[5].nil? && binary_to_string(row[5]).to_i > 0)
+            user_ids_with_posts << binary_to_string(row[0])
+            ips_with_post << binary_to_string(row[6])
+          end
+          if(ips_all.include?(binary_to_string(row[6])))
+            ips_repeated << binary_to_string(row[6])
+          else
+            ips_all << binary_to_string(row[6])
+          end
+        end
+        rowCount = rowCount+1 
+      end
+      #puts "PAL="+user_ids_with_posts.to_s
+      rowCount = 0
+      array_rows = Array.new
       FasterCSV.open(outputFile, "w") do |csv|
         puts "Working on input file -"+inputFile
-        FasterCSV.foreach( inputFile) do  |row|
-          if rowCount>0
+        FasterCSV.foreach( inputFile, {:col_sep => "\t"}) do  |row|
+          if rowCount>2
             # parse each row in the input csv file and create a new row in the output csv file
-            csv << parseRow(row)
+            if ((user_ids_with_posts.include?(binary_to_string(row[0])) || ips_with_post.include?(binary_to_string(row[6])))&& ips_repeated.include?(binary_to_string(row[6])))
+              array_rows  << parseRow(row)
+              #csv << parseRow(row)
+            end 
+          elsif rowCount==1
+            csv << [binary_to_string(row[0]),binary_to_string(row[1]),binary_to_string(row[2]),binary_to_string(row[3]),binary_to_string(row[4]),binary_to_string(row[5]),binary_to_string(row[6]),"Organization"]
           else
-            csv << [row[0],row[1],"Organization"]
+            csv << [binary_to_string(row[0]),binary_to_string(row[1]),binary_to_string(row[2]),binary_to_string(row[3]),binary_to_string(row[4]),binary_to_string(row[5]),binary_to_string(row[6])]
           end
           rowCount = rowCount + 1
           if(rowCount%5==0)
             print "."
           end
         end
+        array_rows = array_rows.sort {|row1,row2| binary_to_string(row1[6]) <=> binary_to_string(row2[6])}
+        array_rows.each do |row|
+          csv << row
+        end
       end
       puts "\nGenerated output file -"+outputFile
     end
   end
   
+  
+  def convertToCommaSeperated(inputFile)
+    tempFile = inputFile+".temp"
+    FileUtils.mv(inputFile, tempFile)
+    FasterCSV.open(inputFile, "w") do |csv|
+      FasterCSV.foreach(tempFile,{ :col_sep=> "\t" }) do  |row|
+        csv  << row
+      end
+    end
+  end
+  
+  
   # parses each row and finds out the organization of each IP address
   # assumes ip address are in the second column
   def parseRow(row)
-      if !row.nil? && !row[1].nil?
-        orgName = whoIsOrganization(row[1])
-        [row[0],row[1], orgName]
+      if !row.nil? && !row[6].nil?
+        orgName = whoIsOrganization(binary_to_string(row[6]))
+        [binary_to_string(row[0]),binary_to_string(row[1]),binary_to_string(row[2]),binary_to_string(row[3]),binary_to_string(row[4]),binary_to_string(row[5]),binary_to_string(row[6]), orgName]
       else
-        [row[0],row[1], ""]
+        [binary_to_string(row[0]),binary_to_string(row[1]),binary_to_string(row[2]),binary_to_string(row[3]),binary_to_string(row[4]),binary_to_string(row[5]),binary_to_string(row[6]), ""]
       end
   end
   
@@ -87,6 +133,22 @@ class WhoIsChecker
     a = Whois.query(ipOrDomain)
   end
   
+  
+  def to_ascii(binary_str)
+    binary_str.gsub(/\s/,'').gsub(/([01]{8})/) { |b| b.to_i(2).chr }
+  end
+  
+  def binary_to_string(binary)
+    str_val = "";
+    binary.to_s.each_byte do |c|
+      if(c.to_i >0)
+        str_val =  str_val+c.chr
+      end
+    end
+    str_val
+  end
+
+
   # gets the who is orgname for IP
   def whoIsOrganization(ipOrDomain)
     org=""  
@@ -101,6 +163,14 @@ class WhoIsChecker
       if (counter>3)
         puts ipOrDomain+"--"+e.to_s
         org ="TIMEOUT-ERROR"
+      else
+        sleep 5
+        retry
+      end
+    rescue Exception => e
+      if (counter>3)
+        puts ipOrDomain+"--"+e.to_s
+        org ="SOME-ERROR-"+e.to_s
       else
         sleep 5
         retry
